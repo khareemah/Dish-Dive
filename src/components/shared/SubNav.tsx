@@ -13,7 +13,14 @@ import { CiLocationOn } from 'react-icons/ci';
 
 export default function SubNav() {
   return (
-    <Box bg="#FBBC55" w="full">
+    <Box
+      bg="#FBBC55"
+      w="full"
+      position="fixed"
+      top="80px"
+      left="0"
+      zIndex="docked"
+    >
       <HStack
         w="full"
         justify="space-between"

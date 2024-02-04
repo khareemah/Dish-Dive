@@ -34,6 +34,7 @@ export default function Hero() {
         justify="center"
         color="#FFF"
         spacing="2"
+        pt="160px"
       >
         <Heading
           w="full"
