@@ -6,13 +6,13 @@ export default function Hero() {
       as="section"
       w="full"
       bgColor="#1E1E1E"
-      position="relative"
       minH="100vh"
       backgroundImage="url('/assets/images/hero.png')"
       backgroundPosition="center"
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
       zIndex="1"
+      position="relative"
       px="20px"
       _before={{
         content: "''",
@@ -33,18 +33,16 @@ export default function Hero() {
         align="flex-start"
         justify="center"
         color="#FFF"
-        pt={{ md: '120px', base: '240px' }}
-        pb="80px"
-        spacing="6"
+        spacing="2"
       >
         <Heading
           w="full"
           fontSize={{ md: '55px', base: '36px' }}
-          lineHeight="55px"
+          lineHeight={{ md: '55px', base: '40px' }}
         >
           Uncover the Perfect Bite, Every Time!
         </Heading>
-        <Text w="full" fontSize="22px">
+        <Text w="full" fontSize={{ base: '18px', md: '22px' }}>
           Don&apos;t Settle, Compare! Get the Best Meal in your Town with Dish
           Dive
         </Text>
