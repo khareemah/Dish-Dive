@@ -5,6 +5,7 @@ export const bestRated = [
     price: 1000,
     rating: '4.8',
     review: 300,
+    bestRated: true,
   },
   {
     src: '/assets/images/best-rated-2.png',
@@ -12,6 +13,7 @@ export const bestRated = [
     price: 500,
     rating: '4.7',
     review: 600,
+    bestRated: true,
   },
   {
     src: '/assets/images/best-rated-3.png',
@@ -19,5 +21,6 @@ export const bestRated = [
     price: 2000,
     rating: '4.9',
     review: 500,
+    bestRated: true,
   },
 ];

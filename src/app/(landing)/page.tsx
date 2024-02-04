@@ -2,6 +2,7 @@ import { VStack } from '@chakra-ui/react';
 
 import BestRated from '@/src/components/landing/BestRated';
 import Hero from '@/src/components/landing/Hero';
+import OurStory from '@/src/components/landing/OurStory';
 import SpecialOffer from '@/src/components/landing/SpecialOffer';
 
 export default function HomePage() {
@@ -11,7 +12,7 @@ export default function HomePage() {
       <BestRated />
       <SpecialOffer />
       {/* <FoodCategory /> */}
-      {/* <OurStory /> */}
+      <OurStory />
     </VStack>
   );
 }

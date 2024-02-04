@@ -2,7 +2,7 @@ import { Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 
 import { bestRated } from '@/src/constant/best-rated';
 
-import BestRatedCard from './BestRatedCard';
+import BestRatedCard from './FoodCard';
 
 export default function BestRated() {
   return (
@@ -16,7 +16,7 @@ export default function BestRated() {
       px="20px"
     >
       <VStack w="full" spacing="0">
-        <Heading fontSize={{ base: '22px', md: '40px' }}>
+        <Heading fontSize={{ base: '32px', lg: '40px' }}>
           Best Rated Meal
         </Heading>
         <Text color="#5E6973" textAlign="center">

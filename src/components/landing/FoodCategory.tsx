@@ -1,10 +1,10 @@
 import { Button, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 
-import { specialOffers } from '@/src/constant/special-meals';
+import { foodCategories } from '@/src/constant/food-categories';
 
-import SpecialOfferCard from './FoodCard';
+import FoodCard from './FoodCard';
 
-export default function SpecialOffer() {
+export default function FoodCategory() {
   return (
     <VStack
       w="full"
@@ -13,14 +13,15 @@ export default function SpecialOffer() {
       mx="auto"
       spacing="12"
       px="20px"
+      py="100px"
     >
       <VStack w="full" spacing="0">
         <Heading fontSize={{ base: '32px', lg: '40px' }}>
-          Special Offers
+          Food Categories
         </Heading>
         <Text color="#5E6973" textAlign="center">
-          Ready to tantalize your taste buds without breaking the bank? Dive
-          into our Special Offers section
+          Our Food Categories are your passport to a world of delicious
+          possibilities.
         </Text>
       </VStack>
 
@@ -29,8 +30,8 @@ export default function SpecialOffer() {
         gap={{ base: '12', md: '8' }}
         columns={{ base: 1, md: 3 }}
       >
-        {specialOffers.map((item) => (
-          <SpecialOfferCard item={item} key={item.title} />
+        {foodCategories.map((item) => (
+          <FoodCard item={item} key={item.title} />
         ))}
       </SimpleGrid>
       <Button
