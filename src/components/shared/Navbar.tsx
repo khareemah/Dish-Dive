@@ -10,10 +10,12 @@ import {
   DrawerOverlay,
   HStack,
   IconButton,
+  Text,
   useDisclosure,
   VStack,
 } from '@chakra-ui/react';
 import Link from 'next/link';
+import { CiLocationOn } from 'react-icons/ci';
 
 import ChakraNextImage from '@/src/ui/ChakraNextImage';
 
@@ -86,18 +88,28 @@ export default function Navbar() {
           maxW="container.md"
           margin="0 auto"
         >
-          <IconButton
-            aria-label="Open navigation"
-            variant="ghost"
-            icon={<HamburgerIcon fontSize="2xl" />}
-            onClick={onOpen}
-          />
-
           <ChakraNextImage
             src="/assets/images/logo.png"
             alt=""
             width={30}
             height={30}
+          />
+
+          <HStack
+            wrap="nowrap"
+            whiteSpace="nowrap"
+            spacing="0"
+            // display={{ base: "none", md: "flex" }}
+          >
+            <CiLocationOn fontSize="30px" />
+            <Text fontWeight="600">Lekki, Lagos</Text>
+          </HStack>
+
+          <IconButton
+            aria-label="Open navigation"
+            variant="ghost"
+            icon={<HamburgerIcon fontSize="2xl" />}
+            onClick={onOpen}
           />
         </HStack>
       </Box>

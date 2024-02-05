@@ -7,9 +7,7 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Text,
 } from '@chakra-ui/react';
-import { CiLocationOn } from 'react-icons/ci';
 
 export default function SubNav() {
   return (
@@ -49,17 +47,6 @@ export default function SubNav() {
             />
           </InputRightElement>
         </InputGroup>
-        <HStack
-          wrap="nowrap"
-          whiteSpace="nowrap"
-          spacing="0"
-          display={{ base: 'none', md: 'flex' }}
-        >
-          <CiLocationOn fontSize="30px" color="white" />
-          <Text fontWeight="600" color="white">
-            Lekki, Lagos
-          </Text>
-        </HStack>
       </HStack>
     </Box>
   );

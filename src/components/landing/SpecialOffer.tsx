@@ -33,18 +33,7 @@ export default function SpecialOffer() {
           <SpecialOfferCard item={item} key={item.title} />
         ))}
       </SimpleGrid>
-      <Button
-        size="lg"
-        variant="ghost"
-        w="full"
-        bg="#FAFAFA"
-        border="2px solid #FBBC55"
-        color="#FBBC55"
-        _hover={{
-          bgColor: '#FBBC55',
-          color: '#FFF',
-        }}
-      >
+      <Button size="lg" w="full">
         See More
       </Button>
     </VStack>

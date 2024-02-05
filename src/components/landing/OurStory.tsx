@@ -14,7 +14,10 @@ export default function OurStory() {
       py="100px"
     >
       <VStack w="full" spacing="2" align="flex-start">
-        <Heading fontSize={{ base: '32px', lg: '40px' }}>
+        <Heading
+          fontSize={{ base: '32px', lg: '40px' }}
+          textAlign={{ base: 'center', md: 'left' }}
+        >
           Our Success Story
         </Heading>
         <Text color="#5E6973" textAlign="center">

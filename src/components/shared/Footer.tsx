@@ -1,6 +1,7 @@
 'use client';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import {
+  Box,
   Heading,
   HStack,
   IconButton,
@@ -9,6 +10,7 @@ import {
   InputRightElement,
   Link,
   SimpleGrid,
+  Stack,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -69,27 +71,24 @@ export default function Footer() {
       as="footer"
       align="flex-start"
       h="full"
-      minH="164px"
-      spacing="6"
-      py="60px"
+      pt="100px"
+      pb="60px"
+      maxW="container.md"
+      mx="auto"
+      flex="1"
+      spacing="60px"
+      direction={{ base: 'column', md: 'row' }}
+      px="20px"
     >
-      <VStack
-        maxW="container.md"
-        w="full"
-        mx="auto"
-        flex="1"
-        spacing="60px"
-        direction={{ base: 'column', md: 'row' }}
-        px={{ base: '20px', lg: '60px' }}
-        align="flex-start"
-      >
-        <SimpleGrid
-          columns={{ base: 1, md: 2 }}
-          gap={{ base: 6, md: 12 }}
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap="6" w="full">
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
           w="full"
+          align="flex-start"
+          spacing="6"
         >
           {footerSections.map((section) => (
-            <VStack w="full" spacing="4" align="flex-start" key={section.title}>
+            <VStack w="full" spacing="0" align="flex-start" key={section.title}>
               <Heading
                 lineHeight="28px"
                 fontWeight="700"
@@ -118,8 +117,7 @@ export default function Footer() {
               </VStack>
             </VStack>
           ))}
-        </SimpleGrid>
-
+        </Stack>
         <VStack
           w="full"
           p="4"
@@ -162,46 +160,55 @@ export default function Footer() {
             for you to get the best results. Just insight
           </Text>
         </VStack>
-        <VStack w="full" align="flex-start" spacing="3">
+      </SimpleGrid>
+
+      <SimpleGrid
+        columns={{ base: 1, md: 3 }}
+        w="full"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Box w="fit-content">
           <ChakraNextImage
             src="/assets/images/logo.png"
             alt=""
+            w="full"
             width={30}
             height={30}
           />
-          <HStack w="full" spacing="6">
-            <Text color="#FFF">Terms</Text>
-            <Text color="#FFF">Privacy</Text>
-            <Text color="#FFF">Cookies</Text>
-          </HStack>
-          <HStack w="full" spacing="2">
-            <IconButton
-              aria-label="social media icon"
-              icon={<CiTwitter fontSize="30px" />}
-              variant="ghost"
-              color="#FFF"
-              rounded="full"
-              colorScheme="black"
-            />
-            <IconButton
-              aria-label="social media icon"
-              icon={<CiFacebook fontSize="30px" />}
-              variant="ghost"
-              color="#FFF"
-              rounded="full"
-              colorScheme="black"
-            />
-            <IconButton
-              aria-label="social media icon"
-              icon={<CiInstagram fontSize="30px" />}
-              variant="ghost"
-              color="#FFF"
-              rounded="full"
-              colorScheme="black"
-            />
-          </HStack>
-        </VStack>
-      </VStack>
+        </Box>
+        <HStack w="fit-content">
+          <Text color="#FFF">Terms</Text>
+          <Text color="#FFF">Privacy</Text>
+          <Text color="#FFF">Cookies</Text>
+        </HStack>
+        <HStack w="fit-content">
+          <IconButton
+            aria-label="social media icon"
+            icon={<CiTwitter fontSize="30px" />}
+            variant="ghost"
+            color="#FFF"
+            rounded="full"
+            colorScheme="black"
+          />
+          <IconButton
+            aria-label="social media icon"
+            icon={<CiFacebook fontSize="30px" />}
+            variant="ghost"
+            color="#FFF"
+            rounded="full"
+            colorScheme="black"
+          />
+          <IconButton
+            aria-label="social media icon"
+            icon={<CiInstagram fontSize="30px" />}
+            variant="ghost"
+            color="#FFF"
+            rounded="full"
+            colorScheme="black"
+          />
+        </HStack>
+      </SimpleGrid>
     </VStack>
   );
 }

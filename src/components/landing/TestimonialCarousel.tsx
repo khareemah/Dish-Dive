@@ -99,32 +99,18 @@ export default function TestimonialCarousel() {
         <IconButton
           aria-label="Previous Testimonials"
           rounded="full"
-          bgColor="transparent"
-          border="2px solid #FFCC48"
-          color="#FFCC48"
           icon={<ChevronLeftIcon fontSize="2xl" />}
           onClick={onPrevButtonClick}
           isDisabled={prevBtnDisabled}
           flexShrink="0"
-          _hover={{
-            color: '#FFF',
-            bg: '#FFCC48',
-          }}
         />
         <IconButton
           aria-label="Next Testimonials"
           rounded="full"
-          bgColor="transparent"
-          border="2px solid #FFCC48"
-          color="#FFCC48"
           icon={<ChevronRightIcon fontSize="2xl" />}
           onClick={onNextButtonClick}
           isDisabled={nextBtnDisabled}
           flexShrink="0"
-          _hover={{
-            color: '#FFF',
-            bg: '#FFCC48',
-          }}
         />
       </HStack>
     </VStack>
