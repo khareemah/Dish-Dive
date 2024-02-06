@@ -16,7 +16,7 @@ function Rating({ rating, max = 5 }: Props) {
         .map((_, i) => (
           <StarIcon
             key={i}
-            color={i + 1 <= Math.floor(rating) ? 'green' : '#D9D9D9'}
+            color={i + 1 <= Math.floor(rating) ? '#F1C40F' : '#D9D9D9'}
           />
         ))}
     </HStack>

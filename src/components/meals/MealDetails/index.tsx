@@ -1,13 +1,9 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  VStack,
-} from '@chakra-ui/react';
-import Link from 'next/link';
+import { VStack } from '@chakra-ui/react';
 
 import CustomerReview from './CustomerReview';
 import MealCarousel from './MealCarousel';
+import OtherComments from './OtherComments';
+import PageHeader from './PageHeader';
 import PriceRating from './PriceRating';
 import RelatedMeals from './RelatedMeals';
 
@@ -94,21 +90,12 @@ export default function MealDetailsPage() {
       pb="100px"
       px="20px"
     >
-      <Breadcrumb fontSize={{ base: '18px', md: '32px' }} separator="/">
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} href="/meals" prefetch={false}>
-            Meals
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink>{product.title}</BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
+      <PageHeader product={product} />
       <MealCarousel product={product} />
-      <PriceRating />
       <RelatedMeals products={products} />
+      <PriceRating />
       <CustomerReview />
+      <OtherComments />
     </VStack>
   );
 }

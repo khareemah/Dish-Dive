@@ -15,6 +15,7 @@ export default function MealInfo({ product, ...props }) {
         {product.description}
       </Text>
       <Text fontSize="40px" fontWeight="700" color="yellow.700">
+        <chakra.span fontSize="16px"> from </chakra.span>
         {formatPrice(product.price)}
       </Text>
       <VStack w="full" spacing="0" align="flex-start">
