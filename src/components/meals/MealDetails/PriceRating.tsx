@@ -1,20 +1,26 @@
 'use client';
 import {
+  Box,
   CircularProgress,
   CircularProgressLabel,
+  Slider,
+  SliderFilledTrack,
+  SliderMark,
+  SliderThumb,
+  SliderTrack,
   Stack,
   Text,
   VStack,
 } from '@chakra-ui/react';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 export default function PriceRating() {
-  // const [sliderValue, setSliderValue] = useState(50);
-  // const labelStyles = {
-  //   mt: '2',
-  //   ml: '-2.5',
-  //   fontSize: 'sm',
-  // };
+  const [sliderValue, setSliderValue] = useState(50);
+  const labelStyles = {
+    mt: '2',
+    ml: '-2.5',
+    fontSize: 'sm',
+  };
 
   return (
     <VStack
@@ -78,8 +84,8 @@ export default function PriceRating() {
           </VStack>
         </Stack>
       </VStack>
-      {/* <VStack w="full" align="flex-start" spacing="6">
-        <Text fontSize={{ base: "18px", md: "32px" }}>
+      <VStack w="full" align="flex-start" spacing="6">
+        <Text fontSize={{ base: '18px', md: '32px' }}>
           Your price value rating
         </Text>
 
@@ -104,7 +110,7 @@ export default function PriceRating() {
             <SliderThumb />
           </Slider>
         </Box>
-      </VStack> */}
+      </VStack>
     </VStack>
   );
 }
