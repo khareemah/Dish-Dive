@@ -1,49 +1,23 @@
 'use client';
 
-import { AspectRatio, Box, VStack } from '@chakra-ui/react';
+import { AspectRatio, Box, Stack } from '@chakra-ui/react';
 
 import ImageCarousel from '@/src/ui/carousels/ImageCarousel';
 import ChakraNextImage from '@/src/ui/ChakraNextImage';
 
-const product = {
-  productImages: [
-    { imgUrl: '/assets/images/best-rated-1.png' },
-    { imgUrl: '/assets/images/best-rated-2.png' },
-  ],
-  imgUrl: '/assets/images/best-rated-1.png',
-  price: '3000',
-  calories: '300 kcal',
-  allergy: 'Contains nuts',
-};
+import MealInfo from './MealInfo';
 
-export default function MealCarousel() {
+export default function MealCarousel({ product }) {
   const renderItem = (productImg) => (
-    <ChakraNextImage
-      src={productImg.imgUrl}
-      width={326}
-      height={427}
-      alt="product image"
-      w="full"
-      objectFit="contain"
-      bg="#FFCC48"
-      h="full"
-      overflow="hidden"
-      flexShrink="0"
-      rounded="3xl"
-      unoptimized
-    />
-  );
-
-  const renderThumbs = (productImg) => (
-    <AspectRatio ratio={1 / 1} w="117px">
+    <AspectRatio ratio={1 / 1} w="full">
       <ChakraNextImage
         src={productImg.imgUrl}
         width={326}
         height={427}
         alt="product image"
         w="full"
-        bg="#FFCC48"
         objectFit="contain"
+        bg="rgba(44, 136, 0, 0.10)"
         flexShrink="0"
         rounded="2xl"
         unoptimized
@@ -51,8 +25,32 @@ export default function MealCarousel() {
     </AspectRatio>
   );
 
+  const renderThumbs = (productImg) => (
+    <AspectRatio ratio={1 / 1} w="80px" h="80px">
+      <ChakraNextImage
+        src={productImg.imgUrl}
+        width={80}
+        height={80}
+        alt="product image"
+        w="full"
+        bg="#FFCC48"
+        objectFit="contain"
+        flexShrink="0"
+        rounded="lg"
+        unoptimized
+      />
+    </AspectRatio>
+  );
+
   return (
-    <VStack w="full" align="flex-start" py="50px">
+    <Stack
+      direction={{ base: 'column', md: 'row' }}
+      w="full"
+      align="flex-start"
+      justify="flex-start"
+      py="50px"
+      spacing="12"
+    >
       <Box w="full" flex="1">
         <ImageCarousel
           containerSpacing="8"
@@ -61,6 +59,7 @@ export default function MealCarousel() {
           renderThumbs={renderThumbs}
         />
       </Box>
-    </VStack>
+      <MealInfo product={product} flex="1" paddingTop="30px" />
+    </Stack>
   );
 }

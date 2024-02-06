@@ -1,8 +1,8 @@
 import { SVGProps } from 'react';
 
 function StarIcon({
-  width = 18,
-  height = 18,
+  width = 22,
+  height = 22,
   color = '#F1C40F',
   ...props
 }: SVGProps<SVGSVGElement>) {

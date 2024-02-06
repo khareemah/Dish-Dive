@@ -54,7 +54,7 @@ const colors: Colors = {
     100: '#FBF2CB',
     200: '#FDE57E',
     300: '#FFD16A',
-    400: '#FBBC55',
+    400: '#FFCC48',
     500: '#E9A23B',
     600: '#C8811A',
     700: '#A35C00',

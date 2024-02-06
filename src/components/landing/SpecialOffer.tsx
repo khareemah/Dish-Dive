@@ -18,7 +18,7 @@ export default function SpecialOffer() {
         <Heading fontSize={{ base: '32px', lg: '40px' }}>
           Special Offers
         </Heading>
-        <Text color="#5E6973" textAlign="center">
+        <Text color="#5E6973" textAlign="center" fontSize="16px">
           Ready to tantalize your taste buds without breaking the bank? Dive
           into our Special Offers section
         </Text>
