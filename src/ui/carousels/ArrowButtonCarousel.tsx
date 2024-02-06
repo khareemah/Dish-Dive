@@ -10,10 +10,12 @@ import {
   IconButtonProps,
   StackProps,
 } from '@chakra-ui/react';
-import useEmblaCarousel, {
-  EmblaOptionsType,
-  EmblaPluginType,
-} from 'embla-carousel-react';
+import {
+  type EmblaCarouselType as CarouselApi,
+  type EmblaOptionsType as CarouselOptions,
+  type EmblaPluginType as CarouselPlugin,
+} from 'embla-carousel';
+import useEmblaCarousel from 'embla-carousel-react';
 import { ReactNode } from 'react';
 
 import useCarouselButtons from '@/src/hooks/useCarouselButtons';
@@ -21,8 +23,8 @@ import useCarouselButtons from '@/src/hooks/useCarouselButtons';
 type Props<T> = {
   items: T[];
   renderItem(item: T): ReactNode;
-  carouselOptions?: EmblaOptionsType;
-  carouselPlugins?: EmblaPluginType[];
+  carouselOptions?: CarouselApi;
+  carouselPlugins?: CarouselPlugin[];
   itemProps?: Omit<BoxProps, 'minW'>;
   buttonProps?: Omit<IconButtonProps, 'icon'>;
   spacing?: StackProps['spacing'];
@@ -32,7 +34,7 @@ function ArrowButtonCarousel<T>({
   carouselOptions = {
     align: 'start',
     loop: false,
-  },
+  } as any,
   carouselPlugins = [],
   items,
   renderItem,
@@ -40,8 +42,8 @@ function ArrowButtonCarousel<T>({
   itemProps,
   spacing = '1rem',
 }: Props<T>) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    carouselOptions,
+  const [emblaMainRef, emblaMainApi] = useEmblaCarousel(
+    carouselOptions as CarouselOptions,
     carouselPlugins
   );
 
@@ -50,11 +52,11 @@ function ArrowButtonCarousel<T>({
     onNextButtonClick,
     onPrevButtonClick,
     prevBtnDisabled,
-  } = useCarouselButtons(emblaApi);
+  } = useCarouselButtons(emblaMainApi);
 
   return (
     <Center w="full" position="relative" overflow="hidden">
-      <Box w="full" ref={emblaRef}>
+      <Box w="full" ref={emblaMainRef}>
         <HStack
           w="full"
           style={{ backfaceVisibility: 'hidden', touchAction: 'pan-y' }}

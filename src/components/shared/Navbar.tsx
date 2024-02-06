@@ -88,19 +88,16 @@ export default function Navbar() {
           maxW="container.md"
           margin="0 auto"
         >
-          <ChakraNextImage
-            src="/assets/images/logo.png"
-            alt=""
-            width={30}
-            height={30}
-          />
+          <Link href="/">
+            <ChakraNextImage
+              src="/assets/images/logo.png"
+              alt=""
+              width={30}
+              height={30}
+            />
+          </Link>
 
-          <HStack
-            wrap="nowrap"
-            whiteSpace="nowrap"
-            spacing="0"
-            // display={{ base: "none", md: "flex" }}
-          >
+          <HStack wrap="nowrap" whiteSpace="nowrap" spacing="0">
             <CiLocationOn fontSize="30px" />
             <Text fontWeight="600">Lekki, Lagos</Text>
           </HStack>
