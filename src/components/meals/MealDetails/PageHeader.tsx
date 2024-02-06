@@ -1,4 +1,9 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+} from '@chakra-ui/react';
 import Link from 'next/link';
 
 export default function PageHeader({ product }) {
@@ -11,7 +16,7 @@ export default function PageHeader({ product }) {
       </BreadcrumbItem>
 
       <BreadcrumbItem>
-        <BreadcrumbLink>{product.title}</BreadcrumbLink>
+        <Box>{product.title}</Box>
       </BreadcrumbItem>
     </Breadcrumb>
   );

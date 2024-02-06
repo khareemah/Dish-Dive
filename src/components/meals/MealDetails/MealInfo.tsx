@@ -11,12 +11,11 @@ export default function MealInfo({ product, ...props }) {
       <Text fontSize="25px" fontWeight="500">
         {product.title}
       </Text>
-      <Text maxW="600px" fontSize={{ base: '16px', md: '20px' }}>
+      <Text maxW="600px" fontSize={{ base: '16px', md: '18px' }}>
         {product.description}
       </Text>
-      <Text fontSize="40px" fontWeight="700" color="yellow.700">
-        <chakra.span fontSize="16px"> from </chakra.span>
-        {formatPrice(product.price)}
+      <Text fontSize="20px" fontWeight="700">
+        from {formatPrice(product.price)}
       </Text>
       <VStack w="full" spacing="0" align="flex-start">
         <Text fontSize="16px">

@@ -65,150 +65,156 @@ const footerSections = [
 
 export default function Footer() {
   return (
-    <VStack
-      w="full"
-      bgColor="#121212"
-      as="footer"
-      align="flex-start"
-      h="full"
-      pt="100px"
-      pb="60px"
-      maxW="container.md"
-      mx="auto"
-      flex="1"
-      spacing="60px"
-      direction={{ base: 'column', md: 'row' }}
-      px="20px"
-    >
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap="6" w="full">
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          w="full"
-          align="flex-start"
-          spacing="6"
-        >
-          {footerSections.map((section) => (
-            <VStack w="full" spacing="0" align="flex-start" key={section.title}>
-              <Heading
-                lineHeight="28px"
-                fontWeight="700"
-                color="#FFF"
-                fontSize="16px"
-              >
-                {section.title}
-              </Heading>
-              <VStack align="flex-start" spacing="2">
-                {section.links.map((link) =>
-                  link.isExternal ? (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      isExternal
-                      color="#F3EBFA"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <NextLink key={link.href} href={link.href}>
-                      <Text color="#F3EBFA">{link.label}</Text>
-                    </NextLink>
-                  )
-                )}
-              </VStack>
-            </VStack>
-          ))}
-        </Stack>
-        <VStack
-          w="full"
-          p="4"
-          rounded="5px"
-          spacing="24px"
-          align="flex-start"
-          bg="#333"
-        >
-          <Heading color="#FFF" fontSize="18px">
-            Subscribe
-          </Heading>
-          <InputGroup w="full" size="lg">
-            <Input
-              placeholder="Email Address"
-              variant="ghost"
-              focusBorderColor="#FFF"
-              sx={{ '::placeholder': { color: '#cdc6c6' } }}
-              bgColor="#000"
-              size="lg"
-            />
-            <InputRightElement>
-              <IconButton
-                rounded="md"
-                aria-label="Search"
-                h="full"
-                w="full"
-                bg="#FFCC48"
-                icon={<ArrowForwardIcon color="#000" fontSize="30px" />}
-              />
-            </InputRightElement>
-          </InputGroup>
-          <Text
-            w="full"
-            fontWeight="400"
-            fontSize="14px"
-            color="#F3EBFA
-"
-          >
-            Hello, we are ABC. trying to make an effort to put the right people
-            for you to get the best results. Just insight
-          </Text>
-        </VStack>
-      </SimpleGrid>
-
-      <SimpleGrid
-        columns={{ base: 1, md: 3 }}
+    <Box bgColor="#121212" w="full">
+      <VStack
         w="full"
-        justifyContent="center"
-        alignItems="center"
+        as="footer"
+        align="flex-start"
+        h="full"
+        pt="100px"
+        pb="60px"
+        maxW="container.md"
+        mx="auto"
+        flex="1"
+        spacing="60px"
+        direction={{ base: 'column', md: 'row' }}
+        px="20px"
       >
-        <Box w="fit-content">
-          <ChakraNextImage
-            src="/assets/images/logo.png"
-            alt=""
+        <SimpleGrid columns={{ base: 1, md: 2 }} gap="6" w="full">
+          <Stack
+            direction={{ base: 'column', md: 'row' }}
             w="full"
-            width={30}
-            height={30}
-          />
-        </Box>
-        <HStack w="fit-content">
-          <Text color="#FFF">Terms</Text>
-          <Text color="#FFF">Privacy</Text>
-          <Text color="#FFF">Cookies</Text>
-        </HStack>
-        <HStack w="fit-content">
-          <IconButton
-            aria-label="social media icon"
-            icon={<CiTwitter fontSize="30px" />}
-            variant="ghost"
-            color="#FFF"
-            rounded="full"
-            colorScheme="black"
-          />
-          <IconButton
-            aria-label="social media icon"
-            icon={<CiFacebook fontSize="30px" />}
-            variant="ghost"
-            color="#FFF"
-            rounded="full"
-            colorScheme="black"
-          />
-          <IconButton
-            aria-label="social media icon"
-            icon={<CiInstagram fontSize="30px" />}
-            variant="ghost"
-            color="#FFF"
-            rounded="full"
-            colorScheme="black"
-          />
-        </HStack>
-      </SimpleGrid>
-    </VStack>
+            align="flex-start"
+            spacing="6"
+          >
+            {footerSections.map((section) => (
+              <VStack
+                w="full"
+                spacing="0"
+                align="flex-start"
+                key={section.title}
+              >
+                <Heading
+                  lineHeight="28px"
+                  fontWeight="700"
+                  color="#FFF"
+                  fontSize="16px"
+                >
+                  {section.title}
+                </Heading>
+                <VStack align="flex-start" spacing="2">
+                  {section.links.map((link) =>
+                    link.isExternal ? (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        isExternal
+                        color="#F3EBFA"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <NextLink key={link.href} href={link.href}>
+                        <Text color="#F3EBFA">{link.label}</Text>
+                      </NextLink>
+                    )
+                  )}
+                </VStack>
+              </VStack>
+            ))}
+          </Stack>
+          <VStack
+            w="full"
+            p="4"
+            rounded="5px"
+            spacing="24px"
+            align="flex-start"
+            bg="#333"
+          >
+            <Heading color="#FFF" fontSize="18px">
+              Subscribe
+            </Heading>
+            <InputGroup w="full" size="lg">
+              <Input
+                placeholder="Email Address"
+                variant="ghost"
+                focusBorderColor="#FFF"
+                sx={{ '::placeholder': { color: '#cdc6c6' } }}
+                bgColor="#000"
+                size="lg"
+              />
+              <InputRightElement>
+                <IconButton
+                  rounded="md"
+                  aria-label="Search"
+                  h="full"
+                  w="full"
+                  bg="#FFCC48"
+                  icon={<ArrowForwardIcon color="#000" fontSize="30px" />}
+                />
+              </InputRightElement>
+            </InputGroup>
+            <Text
+              w="full"
+              fontWeight="400"
+              fontSize="14px"
+              color="#F3EBFA
+"
+            >
+              Hello, we are ABC. trying to make an effort to put the right
+              people for you to get the best results. Just insight
+            </Text>
+          </VStack>
+        </SimpleGrid>
+
+        <SimpleGrid
+          columns={{ base: 1, md: 3 }}
+          w="full"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Box w="fit-content">
+            <ChakraNextImage
+              src="/assets/images/logo.png"
+              alt=""
+              w="full"
+              width={30}
+              height={30}
+            />
+          </Box>
+          <HStack w="fit-content">
+            <Text color="#FFF">Terms</Text>
+            <Text color="#FFF">Privacy</Text>
+            <Text color="#FFF">Cookies</Text>
+          </HStack>
+          <HStack w="fit-content">
+            <IconButton
+              aria-label="social media icon"
+              icon={<CiTwitter fontSize="30px" />}
+              variant="ghost"
+              color="#FFF"
+              rounded="full"
+              colorScheme="black"
+            />
+            <IconButton
+              aria-label="social media icon"
+              icon={<CiFacebook fontSize="30px" />}
+              variant="ghost"
+              color="#FFF"
+              rounded="full"
+              colorScheme="black"
+            />
+            <IconButton
+              aria-label="social media icon"
+              icon={<CiInstagram fontSize="30px" />}
+              variant="ghost"
+              color="#FFF"
+              rounded="full"
+              colorScheme="black"
+            />
+          </HStack>
+        </SimpleGrid>
+      </VStack>
+    </Box>
   );
 }

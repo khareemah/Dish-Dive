@@ -1,5 +1,5 @@
 'use client';
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
@@ -10,6 +10,8 @@ import {
   DrawerOverlay,
   HStack,
   IconButton,
+  Menu,
+  MenuButton,
   Text,
   useDisclosure,
   VStack,
@@ -97,11 +99,47 @@ export default function Navbar() {
             />
           </Link>
 
-          <HStack wrap="nowrap" whiteSpace="nowrap" spacing="0">
-            <CiLocationOn fontSize="30px" />
-            <Text fontWeight="600">Lekki, Lagos</Text>
-          </HStack>
-
+          <Menu>
+            {() => (
+              <>
+                <MenuButton
+                  rounded="md"
+                  borderWidth="1px"
+                  as={Button}
+                  size="lg"
+                  gap="12px"
+                  variant="ghost"
+                  colorScheme=""
+                  fontSize="md"
+                  border="none"
+                  rightIcon={
+                    <ChevronDownIcon
+                      transition="all 0.3s"
+                      transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
+                    />
+                  }
+                >
+                  <HStack wrap="nowrap" whiteSpace="nowrap" spacing="0">
+                    <CiLocationOn fontSize="30px" />
+                    <Text fontWeight="600">Lekki, Lagos</Text>
+                  </HStack>
+                </MenuButton>
+                {/* <Portal>
+                  <MenuList
+                    zIndex="dropdown"
+                    rounded="none"
+                    shadow="lg"
+                    border="none"
+                    py="26px"
+                    px="0"
+                  >
+                    <MenuItem fontSize="sm">Place 1</MenuItem>
+                    <MenuItem fontSize="sm">Place 2</MenuItem>
+                  </MenuList>
+                </Portal> */}
+              </>
+            )}
+          </Menu>
           <IconButton
             aria-label="Open navigation"
             variant="ghost"
@@ -111,52 +149,5 @@ export default function Navbar() {
         </HStack>
       </Box>
     </>
-    // <Box w="full" top="0" left="0" zIndex="10">
-    //   <VStack
-    //     as="nav"
-    //     w="full"
-    //     minH="80px"
-    //     maxW="container.md"
-    //     margin="0 auto"
-    //     align="flex-start"
-    //     justify="center"
-    //     py="4"
-    //     spacing="7"
-    //     px="20px"
-    //   >
-    //     <HStack
-    //       justify="space-between"
-    //       w="full"
-    //       flexWrap={{ base: 'wrap', md: 'nowrap' }}
-    //       spacing="6"
-    //     >
-    //       <ChakraNextImage
-    //         src="/assets/images/logo.png"
-    //         alt=""
-    //         width={30}
-    //         height={30}
-    //       />
-    //       <HStack spacing="4" w="full" justify="flex-end">
-    //         <Button
-    //           size="lg"
-    //           variant="ghost"
-    //           w="150px"
-    //           bg="#FAFAFA"
-    //           border="2px solid #FBBC55"
-    //           color="#FBBC55"
-    //           _hover={{
-    //             bgColor: '#FBBC55',
-    //             color: '#FFF',
-    //           }}
-    //         >
-    //           Login
-    //         </Button>
-    //         <Button size="lg" w="150px" color="#FFF">
-    //           Sign up
-    //         </Button>
-    //       </HStack>
-    //     </HStack>
-    //   </VStack>
-    // </Box>
   );
 }

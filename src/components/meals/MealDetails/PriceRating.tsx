@@ -1,38 +1,27 @@
 'use client';
 import {
-  Box,
   CircularProgress,
   CircularProgressLabel,
-  Slider,
-  SliderFilledTrack,
-  SliderMark,
-  SliderThumb,
-  SliderTrack,
   Stack,
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 export default function PriceRating() {
-  const [sliderValue, setSliderValue] = useState(50);
-  console.log(sliderValue);
-  const labelStyles = {
-    mt: '2',
-    ml: '-2.5',
-    fontSize: 'sm',
-  };
+  // const [sliderValue, setSliderValue] = useState(50);
+  // console.log(sliderValue);
+  // const labelStyles = {
+  //   mt: '2',
+  //   ml: '-2.5',
+  //   fontSize: 'sm',
+  // };
 
   return (
-    <VStack
-      w="full"
-      align="flex-start"
-      py={{ base: '50px', md: '100px' }}
-      spacing="20"
-    >
+    <VStack w="full" align="flex-start" pb="50px" spacing="20">
       <VStack w="full" align="flex-start" spacing="6">
-        <Text fontSize={{ base: '22px', md: '32px' }}>
-          See customers rating by price
+        <Text fontSize={{ base: '22px', md: '28px' }}>
+          See Price Value Rating by the numbers
         </Text>
 
         <Stack
@@ -85,7 +74,7 @@ export default function PriceRating() {
           </VStack>
         </Stack>
       </VStack>
-      <VStack w="full" align="flex-start" spacing="6">
+      {/* <VStack w="full" align="flex-start" spacing="6">
         <Text fontSize={{ base: '18px', md: '32px' }}>
           Your price value rating
         </Text>
@@ -111,7 +100,7 @@ export default function PriceRating() {
             <SliderThumb />
           </Slider>
         </Box>
-      </VStack>
+      </VStack> */}
     </VStack>
   );
 }

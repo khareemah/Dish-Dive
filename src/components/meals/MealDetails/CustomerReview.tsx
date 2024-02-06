@@ -1,6 +1,5 @@
 'use client';
 import {
-  Box,
   Button,
   Checkbox,
   FormControl,
@@ -17,20 +16,19 @@ import RatingInput from '@/src/ui/RatingInput';
 export default function CustomerReview() {
   const { register, control } = useForm();
   return (
-    <VStack w="full" align="flex-start" py="100px" spacing="3">
-      <Text fontSize={{ base: '22px', md: '32px' }}>Submit your review</Text>
-      <Box w="full">
-        <FormLabel>Comments</FormLabel>
+    <VStack w="full" align="flex-start" pb="50px" spacing="3">
+      <VStack w="full" align="flex-start" spacing="3">
+        <Text fontWeight="bold" fontSize="22px">
+          Submit your review
+        </Text>
         <Textarea border="1px solid black" rows={5}></Textarea>
-      </Box>
+      </VStack>
       <Controller
         control={control}
         name="rating"
         render={({ field }) => (
           <FormControl>
-            <FormLabel>
-              Pick the rating that aligns with your preference.
-            </FormLabel>
+            <FormLabel>Click on the stars below to rate this food</FormLabel>
             <Input type="number" hidden {...register('rating')} />
             <RatingInput value={field.value} onChange={field.onChange} />
           </FormControl>

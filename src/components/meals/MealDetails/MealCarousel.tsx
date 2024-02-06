@@ -17,7 +17,7 @@ export default function MealCarousel({ product }) {
         alt="product image"
         w="full"
         objectFit="contain"
-        bg="rgba(44, 136, 0, 0.10)"
+        bg="#FFCC48"
         flexShrink="0"
         rounded="2xl"
         unoptimized
@@ -49,7 +49,7 @@ export default function MealCarousel({ product }) {
       align="flex-start"
       justify="flex-start"
       py="50px"
-      spacing="12"
+      spacing={{ base: '6', md: '12' }}
     >
       <Box w="full" flex="1">
         <ImageCarousel
@@ -59,7 +59,11 @@ export default function MealCarousel({ product }) {
           renderThumbs={renderThumbs}
         />
       </Box>
-      <MealInfo product={product} flex="1" paddingTop="30px" />
+      <MealInfo
+        product={product}
+        flex="1"
+        paddingTop={{ base: '10px', md: '30px' }}
+      />
     </Stack>
   );
 }

@@ -19,13 +19,13 @@ export default function FoodCard({ item }) {
       {item.bestRated && (
         <Center
           position="absolute"
-          top="-30px"
+          top="0"
           right="0"
           px="4"
           py="2"
           bg="#BFFFB5"
-          mr="3"
-          mt="3"
+          // mr="3"
+          // mt="3"
           zIndex="1"
           color="#000"
           rounded="8px"

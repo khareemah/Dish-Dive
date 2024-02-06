@@ -7,8 +7,8 @@ import FoodCard from '../../landing/FoodCard';
 
 export default function RelatedMeals({ products }) {
   return (
-    <VStack w="full" align="flex-start" spacing="6">
-      <Text fontSize={{ base: '22px', md: '32px' }}>
+    <VStack w="full" align="flex-start" pb="50px">
+      <Text fontSize={{ base: '22px', md: '28px' }}>
         People also like this from korede
       </Text>
       <ArrowButtonCarousel
