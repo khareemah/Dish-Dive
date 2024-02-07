@@ -1,19 +1,19 @@
-'use client';
+"use client";
 import {
   //  Slide,
   // useDisclosure,
   VStack,
-} from '@chakra-ui/react';
-import { useParams } from 'next/navigation';
+} from "@chakra-ui/react";
+import { useParams } from "next/navigation";
 
-import allProducts from '@/src/constant/allProducts';
+import allProducts from "@/src/constant/allProducts";
 
-import CustomerReview from './CustomerReview';
-import MealCarousel from './MealCarousel';
-import OtherComments from './OtherComments';
-import PageHeader from './PageHeader';
-import PriceRating from './PriceRating';
-import RelatedMeals from './RelatedMeals';
+import CustomerReview from "./CustomerReview";
+import MealCarousel from "./MealCarousel";
+import OtherComments from "./OtherComments";
+import PageHeader from "./PageHeader";
+import PriceRating from "./PriceRating";
+import RelatedMeals from "./RelatedMeals";
 
 export default function MealDetailsPage() {
   const { mealId } = useParams();

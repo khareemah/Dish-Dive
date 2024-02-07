@@ -1,6 +1,6 @@
-import { VStack } from '@chakra-ui/react';
+import { VStack } from "@chakra-ui/react";
 
-// import MealsList from './MealsList';
+import MealsList from "./MealsList";
 
 export default function AllMeals() {
   return (
@@ -13,7 +13,7 @@ export default function AllMeals() {
       pb="100px"
       px="20px"
     >
-      {/* <MealsList /> */}
+      <MealsList />
     </VStack>
   );
 }
