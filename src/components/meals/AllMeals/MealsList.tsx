@@ -1,27 +1,46 @@
 'use client';
 import { Heading, SimpleGrid, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import allProducts from '@/src/constant/allProducts';
 import { BackButton } from '@/src/ui/BackButton';
+import { capitalize } from '@/src/utils/string-helpers';
 
 import FoodCard from '../../landing/FoodCard';
-// import { BackButton } from "@/src/ui/BackButton";
+import NoMeals from './NoMeals';
 
-export default function MealsList() {
-  const [meals, setMeals] = useState(allProducts);
-  const searchTerm = '';
+type SearchParams = Partial<Record<string, string | string[]>>;
+export default function MealsList({
+  searchParams,
+}: {
+  searchParams: URLSearchParams;
+}) {
+  const [meals] = useState(allProducts);
 
-  console.log('parent rendering');
-
-  useEffect(() => {
-    if (searchTerm) {
-      setMeals(meals.filter((meal) => meal.title.includes(searchTerm)));
+  const searchParamsObject: SearchParams = {};
+  searchParams.forEach((value, key) => {
+    if (searchParamsObject[key]) {
+      if (Array.isArray(searchParamsObject[key])) {
+        (searchParamsObject[key] as string[]).push(value);
+      } else {
+        searchParamsObject[key] = [searchParamsObject[key] as string, value];
+      }
     } else {
-      setMeals(meals);
+      searchParamsObject[key] = value;
     }
-  }, [searchTerm, setMeals, meals]);
+  });
+
+  console.log(searchParamsObject); // Check if searchParamsObject is populated correctly
+
+  let search = '';
+
+  if (typeof searchParamsObject.q === 'string') {
+    search = searchParamsObject.q;
+  }
+  const mainMeals = meals.filter((meal) =>
+    meal.title.includes(capitalize(search))
+  );
 
   return (
     <VStack w="full" align="flex-start" spacing="8">
@@ -30,17 +49,21 @@ export default function MealsList() {
           All Available Meals
         </Heading>
       </BackButton>
-      <SimpleGrid
-        w="full"
-        columns={{ base: 1, md: 3 }}
-        gap={{ md: '8', base: '12' }}
-      >
-        {meals.map((meal) => (
-          <Link href={`meals/${meal.id}`} key={meal.id}>
-            <FoodCard item={meal} />
-          </Link>
-        ))}
-      </SimpleGrid>
+      {mainMeals.length === 0 ? (
+        <NoMeals />
+      ) : (
+        <SimpleGrid
+          w="full"
+          columns={{ base: 1, md: 3 }}
+          gap={{ md: '8', base: '12' }}
+        >
+          {mainMeals.map((meal) => (
+            <Link href={`meals/${meal.id}`} key={meal.id}>
+              <FoodCard item={meal} />
+            </Link>
+          ))}
+        </SimpleGrid>
+      )}
     </VStack>
   );
 }

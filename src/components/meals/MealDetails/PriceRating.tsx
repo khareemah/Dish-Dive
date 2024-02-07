@@ -24,7 +24,7 @@ export default function PriceRating({ pricing }) {
         >
           <VStack>
             <CircularProgress
-              value={80}
+              value={pricing.goodValue}
               size="150px"
               thickness="4px"
               color="yellow.400"
@@ -38,7 +38,7 @@ export default function PriceRating({ pricing }) {
 
           <VStack>
             <CircularProgress
-              value={20}
+              value={pricing.okay}
               size="150px"
               thickness="4px"
               color="yellow.400"
@@ -52,7 +52,7 @@ export default function PriceRating({ pricing }) {
 
           <VStack>
             <CircularProgress
-              value={5}
+              value={pricing.overpriced}
               size="150px"
               thickness="4px"
               color="yellow.400"

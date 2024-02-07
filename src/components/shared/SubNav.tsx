@@ -8,8 +8,21 @@ import {
   InputGroup,
   InputRightElement,
 } from '@chakra-ui/react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useState } from 'react';
 
 export default function SubNav() {
+  const router = useRouter();
+  const [value, setValue] = useState('');
+
+  const searchParams = useSearchParams();
+
+  const onSearch = useCallback(() => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set('q', value);
+    router.push(`/meals?${newSearchParams.toString()}`);
+  }, [router, searchParams, value]);
+
   return (
     <Box
       bg="#FBBC55"
@@ -35,6 +48,7 @@ export default function SubNav() {
             focusBorderColor="#FFF"
             sx={{ '::placeholder': { color: 'black.50' } }}
             size="lg"
+            onChange={(e) => setValue(e.target.value)}
           />
           <InputRightElement>
             <IconButton
@@ -44,6 +58,7 @@ export default function SubNav() {
               w="full"
               bg="yellow.600"
               icon={<SearchIcon color="#fff" />}
+              onClick={onSearch}
             />
           </InputRightElement>
         </InputGroup>

@@ -1,8 +1,11 @@
+'use client';
 import { VStack } from '@chakra-ui/react';
+import { useSearchParams } from 'next/navigation';
 
 import MealsList from './MealsList';
 
 export default function AllMeals() {
+  const searchParams = useSearchParams();
   return (
     <VStack
       w="full"
@@ -13,7 +16,7 @@ export default function AllMeals() {
       pb="100px"
       px="20px"
     >
-      <MealsList />
+      <MealsList searchParams={searchParams} />
     </VStack>
   );
 }
