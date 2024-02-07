@@ -11,7 +11,7 @@ const nextConfig = {
         hostname: "**",
       },
     ],
-    domains: ["media.istockphoto.com"],
+    domains: ["media.istockphoto.com", "unsplash.com"],
   },
   reactStrictMode: false,
 };
