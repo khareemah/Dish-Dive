@@ -34,15 +34,13 @@ const allProducts: TProduct[] = [
     price: '3000',
     rating: 4.5,
     review: 206,
-    src: 'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+    src: '',
     productImages: [
       {
-        imgUrl:
-          'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+        imgUrl: '',
       },
       {
-        imgUrl:
-          'https://media.istockphoto.com/id/1185728983/photo/traditional-italian-spaghetti-bolognese.jpg?s=1024x1024&w=is&k=20&c=k1zrTRyf1OBWPfpFdr16SCZNNAAK69DeaRyWfauBdvw=',
+        imgUrl: '',
       },
     ],
     calories: '300 kcal',
@@ -54,14 +52,14 @@ const allProducts: TProduct[] = [
         description:
           'Traditional spaghetti dish with a hearty meat sauce made from scratch using the finest ingredients.',
         price: '3800',
-        src: 'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+        src: '',
       },
       {
         title: 'Spaghetti Deluxe',
         description:
           'Delicious spaghetti made with premium pasta, topped with fresh vegetables, succulent meatballs, and a rich tomato sauce.',
         price: '3500',
-        src: 'https://media.istockphoto.com/id/476768382/photo/italian-spaghetti-with-meatballs.jpg?s=1024x1024&w=is&k=20&c=bkIga3a_AAEaNS8nNwmzkUdq5V1x_LGb-cEohnvv8hQ=',
+        src: '',
       },
     ],
     pricing: {
@@ -78,15 +76,13 @@ const allProducts: TProduct[] = [
     price: '3500',
     rating: 4.8,
     review: 152,
-    src: 'https://media.istockphoto.com/id/476768382/photo/italian-spaghetti-with-meatballs.jpg?s=1024x1024&w=is&k=20&c=bkIga3a_AAEaNS8nNwmzkUdq5V1x_LGb-cEohnvv8hQ=',
+    src: '',
     productImages: [
       {
-        imgUrl:
-          'https://media.istockphoto.com/id/476768382/photo/italian-spaghetti-with-meatballs.jpg?s=1024x1024&w=is&k=20&c=bkIga3a_AAEaNS8nNwmzkUdq5V1x_LGb-cEohnvv8hQ=',
+        imgUrl: '',
       },
       {
-        imgUrl:
-          'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+        imgUrl: '',
       },
     ],
     calories: '320 kcal',
@@ -99,21 +95,21 @@ const allProducts: TProduct[] = [
         description:
           'Delicious spaghetti made with premium pasta, topped with fresh vegetables, succulent meatballs, and a rich tomato sauce.',
         price: '3500',
-        src: 'https://media.istockphoto.com/id/476768382/photo/italian-spaghetti-with-meatballs.jpg?s=1024x1024&w=is&k=20&c=bkIga3a_AAEaNS8nNwmzkUdq5V1x_LGb-cEohnvv8hQ=',
+        src: '',
       },
       {
         title: 'Vegetarian Spaghetti Primavera',
         description:
           'Traditional spaghetti dish with a hearty meat sauce made from scratch using the finest ingredients.',
         price: '9000',
-        src: 'https://media.istockphoto.com/id/979966164/photo/spaghetti-with-minced-meat-and-vegetables.jpg?s=1024x1024&w=is&k=20&c=nYcYqJCwj7zGp8n7DKMswRkrOrhYo6sQSeX5XKz_Kic=',
+        src: '',
       },
       {
         title: 'Spicy Arrabbiata Spaghetti',
         description:
           'Traditional spaghetti dish with a hearty meat sauce made from scratch using the finest ingredients.',
         price: '3800',
-        src: 'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+        src: '',
       },
     ],
     pricing: {
@@ -123,48 +119,88 @@ const allProducts: TProduct[] = [
     },
   },
   {
-    title: 'Spaghetti from Korede',
+    title: 'Jollof Rice from Supreme',
     description:
-      'Mouth Watering Spaghetti made with the finest pasta, garnished with cabbage, carrots, bell peppers, chicken sausages and well seasoned',
-    price: '3000',
-    rating: 4.5,
-    review: 206,
-    src: 'https://media.istockphoto.com/id/632439546/photo/pasta-plate.jpg?s=1024x1024&w=is&k=20&c=ysojMtu1NUy6qMNJy_oAxJjG2sf1BIGY60QiT7D1jZI=',
+      'Delicious Jollof Rice cooked to perfection with premium long-grain rice, infused with aromatic spices, and topped with tender chicken pieces and assorted vegetables.',
+    price: '4000',
+    rating: 4.7,
+    review: 180,
+    src: '',
     productImages: [
       {
-        imgUrl:
-          'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+        imgUrl: '',
       },
       {
-        imgUrl:
-          'https://media.istockphoto.com/id/1185728983/photo/traditional-italian-spaghetti-bolognese.jpg?s=1024x1024&w=is&k=20&c=k1zrTRyf1OBWPfpFdr16SCZNNAAK69DeaRyWfauBdvw=',
+        imgUrl: '',
       },
     ],
-    calories: '300 kcal',
-    allergy: 'Contains nuts',
-    specialOffer: true,
+    calories: '350 kcal',
+    allergy: 'Contains dairy',
+    id: 3,
+    specialOffer: false,
     relatedProducts: [
       {
-        title: 'Spaghetti Deluxe',
+        title: 'Jollof Rice from Supreme',
         description:
-          'Delicious spaghetti made with premium pasta, topped with fresh vegetables, succulent meatballs, and a rich tomato sauce.',
-        price: '3500',
-        src: 'https://media.istockphoto.com/id/476768382/photo/italian-spaghetti-with-meatballs.jpg?s=1024x1024&w=is&k=20&c=bkIga3a_AAEaNS8nNwmzkUdq5V1x_LGb-cEohnvv8hQ=',
+          'Juicy chicken pieces marinated in a special blend of spices, skewered and grilled to perfection.',
+        price: '2500',
+        src: '',
       },
       {
-        title: 'Classic Spaghetti Bolognese',
+        title: 'Jollof Rice from Supreme',
         description:
-          'Traditional spaghetti dish with a hearty meat sauce made from scratch using the finest ingredients.',
-        price: '3800',
-        src: 'https://media.istockphoto.com/id/1344241923/photo/spaghetti-with-meatballs-and-tomato-sauce-italian-pasta.jpg?s=1024x1024&w=is&k=20&c=mnqThkXQEutYsVAFaJn53Z05DDSqtxDT6NeGzkL2XLE=',
+          'Crispy plantain chips seasoned with a hint of salt, perfect for snacking.',
+        price: '800',
+        src: '',
       },
     ],
     pricing: {
-      goodValue: '80',
+      goodValue: '70',
       okay: '20',
-      overpriced: '5',
+      overpriced: '10',
     },
-    id: 3,
+  },
+  {
+    title: 'Vegetarian Jollof from Adogan',
+    description:
+      'Flavorful Jollof Rice made with nutritious vegetables and aromatic spices, a delicious meat-free option for all occasions.',
+    price: '3500',
+    rating: 4.5,
+    review: 120,
+    src: '',
+    productImages: [
+      {
+        imgUrl: '',
+      },
+      {
+        imgUrl: '',
+      },
+    ],
+    calories: '320 kcal',
+    allergy: 'Vegetarian-friendly',
+    id: 4,
+    specialOffer: true,
+    relatedProducts: [
+      {
+        title: 'Vegetarian Jollof from Adogan',
+        description:
+          'Sweet and savory fried plantains, a perfect accompaniment to any meal.',
+        price: '1200',
+        src: '',
+      },
+      {
+        title: 'Vegetarian Jollof from Adogan',
+        description:
+          'Jollof Rice infused with coconut milk, giving it a rich and creamy texture, perfect for coconut lovers.',
+        price: '4200',
+        src: '',
+      },
+    ],
+    pricing: {
+      goodValue: '50',
+      okay: '30',
+      overpriced: '20',
+    },
   },
 ];
 

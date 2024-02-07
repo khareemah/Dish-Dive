@@ -49,21 +49,17 @@ export default function FoodCard({ item }) {
         <Text fontWeight="500" fontSize="18px" color="##6E6E6E">
           {item.title}
         </Text>
-        {!item.specialOffer && (
-          <HStack>
-            <Text fontWeight="600">{item.rating}</Text>
-            <Rating rating={isNaN(+item.rating) ? 0 : +item.rating} max={5} />
-            <Text color="#3B3A3A">({item.review})</Text>
-          </HStack>
-        )}
-        {!item.specialOffer && (
-          <Text>
-            <chakra.span color="#6E6E6E">From </chakra.span>
-            <chakra.span fontWeight="600">
-              {formatPrice(+item.price)}
-            </chakra.span>
-          </Text>
-        )}
+
+        <HStack>
+          <Text fontWeight="600">{item.rating}</Text>
+          <Rating rating={isNaN(+item.rating) ? 0 : +item.rating} max={5} />
+          <Text color="#3B3A3A">({item.review})</Text>
+        </HStack>
+
+        <Text>
+          <chakra.span color="#6E6E6E">From </chakra.span>
+          <chakra.span fontWeight="600">{formatPrice(+item.price)}</chakra.span>
+        </Text>
       </VStack>
     </VStack>
   );
