@@ -21,7 +21,7 @@ export default function MealsList() {
     } else {
       setMeals(meals);
     }
-  }, [searchTerm]);
+  }, [searchTerm, setMeals, meals]);
 
   return (
     <VStack w="full" align="flex-start" spacing="8">
