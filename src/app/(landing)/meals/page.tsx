@@ -1,3 +1,5 @@
+import AllMeals from '@/src/components/meals/AllMeals';
+
 export default function AllMealsPage() {
-  return <div>All Meals</div>;
+  return <AllMeals />;
 }

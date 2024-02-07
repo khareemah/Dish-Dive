@@ -6,17 +6,8 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-// import { useState } from 'react';
 
-export default function PriceRating() {
-  // const [sliderValue, setSliderValue] = useState(50);
-  // console.log(sliderValue);
-  // const labelStyles = {
-  //   mt: '2',
-  //   ml: '-2.5',
-  //   fontSize: 'sm',
-  // };
-
+export default function PriceRating({ pricing }) {
   return (
     <VStack w="full" align="flex-start" pb="50px" spacing="20">
       <VStack w="full" align="flex-start" spacing="6">
@@ -38,7 +29,7 @@ export default function PriceRating() {
               thickness="4px"
               color="yellow.400"
             >
-              <CircularProgressLabel>80+</CircularProgressLabel>
+              <CircularProgressLabel>{`${pricing.goodValue}+`}</CircularProgressLabel>
             </CircularProgress>
             <Text fontWeight="600" fontSize="18px">
               Good Value
@@ -52,7 +43,7 @@ export default function PriceRating() {
               thickness="4px"
               color="yellow.400"
             >
-              <CircularProgressLabel>20+</CircularProgressLabel>
+              <CircularProgressLabel>{`${pricing.okay}+`}</CircularProgressLabel>
             </CircularProgress>
             <Text fontWeight="600" fontSize="18px">
               Okay
@@ -66,7 +57,9 @@ export default function PriceRating() {
               thickness="4px"
               color="yellow.400"
             >
-              <CircularProgressLabel>5+</CircularProgressLabel>
+              <CircularProgressLabel>
+                {`${pricing.overpriced}+`}
+              </CircularProgressLabel>
             </CircularProgress>
             <Text fontWeight="600" fontSize="18px">
               Overpriced

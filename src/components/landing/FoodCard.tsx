@@ -24,8 +24,6 @@ export default function FoodCard({ item }) {
           px="4"
           py="2"
           bg="#BFFFB5"
-          // mr="3"
-          // mt="3"
           zIndex="1"
           color="#000"
           rounded="8px"
@@ -38,28 +36,27 @@ export default function FoodCard({ item }) {
         <ChakraNextImage
           alt="Product Name"
           src={item.src}
-          width={200}
-          height={200}
+          width={400}
+          height={400}
           flexShrink="0"
           rounded="8px"
           fallback={<Box w="full" h="full" rounded="2xl" bg="gray.200" />}
-          borderRadius="10px"
           unoptimized
-          objectFit="cover"
+          objectFit="contain"
         />
       </AspectRatio>
       <VStack align="flex-start" spacing="2">
         <Text fontWeight="500" fontSize="18px" color="##6E6E6E">
           {item.title}
         </Text>
-        {item.rating && (
+        {!item.specialOffer && (
           <HStack>
             <Text fontWeight="600">{item.rating}</Text>
             <Rating rating={isNaN(+item.rating) ? 0 : +item.rating} max={5} />
             <Text color="#3B3A3A">({item.review})</Text>
           </HStack>
         )}
-        {item.price && (
+        {!item.specialOffer && (
           <Text>
             <chakra.span color="#6E6E6E">From </chakra.span>
             <chakra.span fontWeight="600">

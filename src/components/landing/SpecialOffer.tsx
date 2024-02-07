@@ -1,6 +1,14 @@
-import { Button, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Heading,
+  SimpleGrid,
+  Text,
+  VStack,
+} from '@chakra-ui/react';
+import Link from 'next/link';
 
-import { specialOffers } from '@/src/constant/special-meals';
+import allProducts from '@/src/constant/allProducts';
 
 import SpecialOfferCard from './FoodCard';
 
@@ -29,13 +37,20 @@ export default function SpecialOffer() {
         gap={{ base: '12', md: '8' }}
         columns={{ base: 1, md: 3 }}
       >
-        {specialOffers.map((item) => (
-          <SpecialOfferCard item={item} key={item.title} />
-        ))}
+        {allProducts
+          .filter((meal) => meal.specialOffer)
+          .slice(0, 3)
+          .map((item) => (
+            <SpecialOfferCard item={item} key={item.title} />
+          ))}
       </SimpleGrid>
-      <Button size="lg" w="full">
-        See More
-      </Button>
+      <Box w="full">
+        <Link href="/meals">
+          <Button size="lg" w="full">
+            See More
+          </Button>
+        </Link>
+      </Box>
     </VStack>
   );
 }

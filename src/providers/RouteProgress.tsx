@@ -7,7 +7,7 @@ function RouteProgress() {
     <Suspense fallback={null}>
       <ProgressBar
         height="4px"
-        color="#2C8800"
+        color="#A35C00"
         options={{ showSpinner: false }}
         shallowRouting
       />

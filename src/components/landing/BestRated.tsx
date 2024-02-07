@@ -1,6 +1,7 @@
 import { Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import Link from 'next/link';
 
-import { bestRated } from '@/src/constant/best-rated';
+import allProducts from '@/src/constant/allProducts';
 
 import BestRatedCard from './FoodCard';
 
@@ -28,9 +29,14 @@ export default function BestRated() {
         gap={{ base: '12', md: '8' }}
         columns={{ base: 1, md: 3 }}
       >
-        {bestRated.map((item) => (
-          <BestRatedCard item={item} key={item.title} />
-        ))}
+        {allProducts
+          .filter((meal) => meal.bestRated)
+          .slice(0, 3)
+          .map((item) => (
+            <Link href={`meals/${item.id}`} key={item.title}>
+              <BestRatedCard item={item} />
+            </Link>
+          ))}
       </SimpleGrid>
     </VStack>
   );

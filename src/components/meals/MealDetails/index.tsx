@@ -1,4 +1,12 @@
-import { VStack } from '@chakra-ui/react';
+'use client';
+import {
+  //  Slide,
+  // useDisclosure,
+  VStack,
+} from '@chakra-ui/react';
+import { useParams } from 'next/navigation';
+
+import allProducts from '@/src/constant/allProducts';
 
 import CustomerReview from './CustomerReview';
 import MealCarousel from './MealCarousel';
@@ -8,76 +16,10 @@ import PriceRating from './PriceRating';
 import RelatedMeals from './RelatedMeals';
 
 export default function MealDetailsPage() {
-  const product = {
-    rating: 4.5,
-    review: 206,
-    productImages: [
-      { imgUrl: '/assets/images/main.svg' },
-      { imgUrl: '/assets/images/best-rated-2.png' },
-    ],
-    description:
-      'Mouth Watering Spaghetti made with the finest pasta, garnished with cabbage, carrots, bell peppers, chicken sausages and well seasoned.',
-    imgUrl: '/assets/images/main.svg',
-    price: '3000',
-    calories: '300 kcal',
-    allergy: 'Contains nuts',
-    title: 'Spaghetti from Korede',
-  };
+  const { mealId } = useParams();
+  const product = allProducts.find((item) => item.id.toString() === mealId);
 
-  const products = [
-    {
-      productImages: [
-        { imgUrl: '/assets/images/main.svg' },
-        { imgUrl: '/assets/images/best-rated-2.png' },
-      ],
-      description:
-        'Mouth Watering Spaghetti made with the finest pasta, garnished with cabbage, carrots, bell peppers, chicken sausages and well seasoned.',
-      src: '/assets/images/main.svg',
-      price: '3000',
-      calories: '300 kcal',
-      allergy: 'Contains nuts',
-      title: 'Spaghetti from Korede',
-    },
-    {
-      productImages: [
-        { imgUrl: '/assets/images/main.svg' },
-        { imgUrl: '/assets/images/best-rated-2.png' },
-      ],
-      description:
-        'Mouth Watering Spaghetti made with the finest pasta, garnished with cabbage, carrots, bell peppers, chicken sausages and well seasoned.',
-      src: '/assets/images/main.svg',
-      price: '3000',
-      calories: '300 kcal',
-      allergy: 'Contains nuts',
-      title: 'Amala From Buka Street',
-    },
-    {
-      productImages: [
-        { imgUrl: '/assets/images/main.svg' },
-        { imgUrl: '/assets/images/best-rated-2.png' },
-      ],
-      description:
-        'Mouth Watering Spaghetti made with the finest pasta, garnished with cabbage, carrots, bell peppers, chicken sausages and well seasoned.',
-      src: '/assets/images/main.svg',
-      price: '3000',
-      calories: '300 kcal',
-      allergy: 'Contains nuts',
-      title: 'Pounded Yam from Zee Foods',
-    },
-    {
-      productImages: [
-        { imgUrl: '/assets/images/main.svg' },
-        { imgUrl: '/assets/images/best-rated-2.png' },
-      ],
-      description:
-        'Mouth Watering Spaghetti made with the finest pasta, garnished with cabbage, carrots, bell peppers, chicken sausages and well seasoned.',
-      src: '/assets/images/main.svg',
-      price: '3000',
-      calories: '300 kcal',
-      allergy: 'Contains nuts',
-      title: 'Amala From Yakoyo Street',
-    },
-  ];
+  // const { isOpen, onToggle } = useDisclosure();
 
   return (
     <VStack
@@ -92,8 +34,11 @@ export default function MealDetailsPage() {
     >
       <PageHeader product={product} />
       <MealCarousel product={product} />
-      <RelatedMeals products={products} />
-      <PriceRating />
+      <RelatedMeals
+        relatedMeals={product.relatedProducts}
+        mealName={product.title}
+      />
+      <PriceRating pricing={product.pricing} />
       <CustomerReview />
       <OtherComments />
     </VStack>
