@@ -58,7 +58,9 @@ export default function RelatedRestaurants({ restaurant }: Props) {
         spacing={{ base: 6, md: 5 }}
         items={restaurant.relatedRestaurants}
         itemProps={{ w: { base: '90%', md: '300px' }, maxW: '300px' }}
-        renderItem={() => <FoodCard item={restaurant} key={restaurant.title} />}
+        renderItem={(relatedRestaurant) => (
+          <FoodCard item={relatedRestaurant} key={relatedRestaurant.title} />
+        )}
       />
 
       <Overlay isOpen={isOpen} />
