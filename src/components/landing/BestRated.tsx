@@ -16,9 +16,13 @@ export default function BestRated() {
       spacing="12"
       px="20px"
     >
-      <VStack w="full" spacing="0">
-        <Heading fontSize={{ base: '32px', lg: '40px' }}>
-          Best Rated Meal
+      <VStack w="full" spacing="3">
+        <Heading
+          fontSize={{ base: '28px', lg: '40px' }}
+          w="full"
+          textAlign="center"
+        >
+          Best Rated Meals
         </Heading>
         <Text color="#5E6973" textAlign="center" fontSize="16px">
           You get to find out the best rated meals in your Town with Dish Dive.

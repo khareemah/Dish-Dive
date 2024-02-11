@@ -1,5 +1,5 @@
 'use client';
-import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
@@ -112,12 +112,12 @@ export default function Navbar() {
                   colorScheme=""
                   fontSize="md"
                   border="none"
-                  rightIcon={
-                    <ChevronDownIcon
-                      transition="all 0.3s"
-                      transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
-                    />
-                  }
+                  // rightIcon={
+                  //   <ChevronDownIcon
+                  //     transition="all 0.3s"
+                  //     transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                  //   />
+                  // }
                 >
                   <HStack wrap="nowrap" whiteSpace="nowrap" spacing="0">
                     <CiLocationOn fontSize="30px" />
