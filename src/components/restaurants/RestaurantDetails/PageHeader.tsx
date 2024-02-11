@@ -1,12 +1,7 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Text,
-} from '@chakra-ui/react';
-import Link from 'next/link';
+import { Heading } from '@chakra-ui/react';
 
 import { TRestaurant } from '@/src/constant/allRestaurants';
+import { BackButton } from '@/src/ui/BackButton';
 
 type Props = {
   restaurant: TRestaurant;
@@ -14,16 +9,10 @@ type Props = {
 
 export default function PageHeader({ restaurant }: Props) {
   return (
-    <Breadcrumb fontSize="22px" separator="/" fontWeight="600">
-      <BreadcrumbItem>
-        <BreadcrumbLink as={Link} href="/meals" prefetch={false}>
-          All Restaurants
-        </BreadcrumbLink>
-      </BreadcrumbItem>
-
-      <BreadcrumbItem>
-        <Text>{restaurant.title}</Text>
-      </BreadcrumbItem>
-    </Breadcrumb>
+    <BackButton to="..">
+      <Heading fontSize="22px" fontWeight="500">
+        {restaurant.title}
+      </Heading>
+    </BackButton>
   );
 }
