@@ -1,12 +1,9 @@
 'use client';
-import {
-  //  Slide,
-  // useDisclosure,
-  VStack,
-} from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 import { useParams } from 'next/navigation';
 
 import allRestaurants from '@/src/constant/allRestaurants';
+import NoData from '@/src/ui/NoData';
 
 import CustomerReview from './CustomerReview';
 import FoodCarousel from './FoodCarousel';
@@ -20,8 +17,22 @@ export default function MealDetailsPage() {
     (item) => item.id.toString() === restaurantId
   );
 
-  // const { isOpen, onToggle } = useDisclosure();
+  let content = <></>;
+  if (!restaurant) {
+    content = <NoData label="No Restaurant found" />;
+  }
 
+  if (restaurant) {
+    content = (
+      <>
+        <FoodCarousel restaurant={restaurant} />
+        <PriceRating priceRating={restaurant.priceRating} />
+        <RelatedRestaurants restaurant={restaurant} />
+        <CustomerReview />
+        <OtherComments />
+      </>
+    );
+  }
   return (
     <VStack
       w="full"
@@ -33,11 +44,7 @@ export default function MealDetailsPage() {
       pb="100px"
       px="20px"
     >
-      <FoodCarousel restaurant={restaurant} />
-      <PriceRating priceRating={restaurant.priceRating} />
-      <RelatedRestaurants restaurant={restaurant} />
-      <CustomerReview />
-      <OtherComments />
+      {content}
     </VStack>
   );
 }

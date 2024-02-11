@@ -9,7 +9,6 @@ import {
   InputGroup,
   InputRightElement,
   Link,
-  SimpleGrid,
   Stack,
   Text,
   VStack,
@@ -71,107 +70,104 @@ export default function Footer() {
         as="footer"
         align="flex-start"
         h="full"
-        pt="100px"
-        pb="60px"
+        py="40px"
+        px="20px"
         maxW="container.md"
         mx="auto"
-        flex="1"
-        spacing="60px"
-        direction={{ base: 'column', md: 'row' }}
-        px="20px"
+        spacing="12"
       >
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap="6" w="full">
-          <Stack
-            direction={{ base: 'column', md: 'row' }}
-            w="full"
-            align="flex-start"
-            spacing="6"
-          >
-            {footerSections.map((section) => (
-              <VStack
-                w="full"
-                spacing="0"
-                align="flex-start"
-                key={section.title}
-              >
-                <Heading
-                  lineHeight="28px"
-                  fontWeight="700"
-                  color="#FFF"
-                  fontSize="16px"
-                >
-                  {section.title}
-                </Heading>
-                <VStack align="flex-start" spacing="2">
-                  {section.links.map((link) =>
-                    link.isExternal ? (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        isExternal
-                        color="#F3EBFA"
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <NextLink key={link.href} href={link.href}>
-                        <Text color="#F3EBFA">{link.label}</Text>
-                      </NextLink>
-                    )
-                  )}
-                </VStack>
-              </VStack>
-            ))}
-          </Stack>
-          <VStack
-            w="full"
-            p="4"
-            rounded="5px"
-            spacing="24px"
-            align="flex-start"
-            bg="#333"
-          >
-            <Heading color="#FFF" fontSize="18px">
-              Subscribe
-            </Heading>
-            <InputGroup w="full" size="lg">
-              <Input
-                placeholder="Email Address"
-                variant="ghost"
-                focusBorderColor="#FFF"
-                sx={{ '::placeholder': { color: '#cdc6c6' } }}
-                bgColor="#000"
-                size="lg"
-              />
-              <InputRightElement>
-                <IconButton
-                  rounded="md"
-                  aria-label="Search"
-                  h="full"
-                  w="full"
-                  bg="#FFCC48"
-                  icon={<ArrowForwardIcon color="#000" fontSize="30px" />}
-                />
-              </InputRightElement>
-            </InputGroup>
-            <Text
-              w="full"
-              fontWeight="400"
-              fontSize="14px"
-              color="#F3EBFA
-"
-            >
-              Hello, we are ABC. trying to make an effort to put the right
-              people for you to get the best results. Just insight
-            </Text>
-          </VStack>
-        </SimpleGrid>
-
-        <SimpleGrid
-          columns={{ base: 1, md: 3 }}
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
           w="full"
-          justifyContent="center"
-          alignItems="center"
+          align="flex-start"
+          spacing={{ base: 8, md: 3 }}
+        >
+          {footerSections.map((section) => (
+            <VStack
+              flex="1"
+              w="full"
+              spacing="4"
+              align="flex-start"
+              key={section.title}
+            >
+              <Heading
+                lineHeight="28px"
+                fontWeight="600"
+                color="#FFF"
+                fontSize="16px"
+              >
+                {section.title}
+              </Heading>
+              <VStack align="flex-start" w="full" spacing="2">
+                {section.links.map((link) =>
+                  link.isExternal ? (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      isExternal
+                      color="#F9F9F9"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <NextLink key={link.href} href={link.href}>
+                      <Text color="#F3EBFA">{link.label}</Text>
+                    </NextLink>
+                  )
+                )}
+              </VStack>
+            </VStack>
+          ))}
+        </Stack>
+
+        <VStack
+          flex="1"
+          w="full"
+          bg="rgba(250, 244, 255, 0.05)"
+          align="flex-start"
+          p={{ base: '4', md: '8' }}
+          spacing="6"
+        >
+          <Text
+            color="#FFF"
+            fontSize={{ base: '18px', md: '20px' }}
+            fontWeight="500"
+          >
+            Subscribe
+          </Text>
+          <InputGroup w="full" size="md">
+            <Input
+              placeholder="Email Address"
+              variant="ghost"
+              focusBorderColor="#000"
+              bgColor="#000"
+              color="#FFF"
+              sx={{ '::placeholder': { color: 'white.50' } }}
+              size="md"
+            />
+            <InputRightElement>
+              <IconButton
+                rounded="md"
+                aria-label="Search"
+                h="full"
+                w="full"
+                bg="yellow.600"
+                icon={<ArrowForwardIcon color="#000" fontSize="22px" />}
+              />
+            </InputRightElement>
+          </InputGroup>
+          <Text w="full" color="#F3EBFA" lineHeight="28px">
+            Hello, we are DISH DIVE trying to make an effort to get you the best
+            of the best meals for you to get the best results. Just insight.
+          </Text>
+        </VStack>
+
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          w="full"
+          justify="space-between"
+          spacing={{ base: 6, md: 3 }}
+          align={{ base: 'flex-start', md: 'center' }}
         >
           <Box w="fit-content">
             <ChakraNextImage
@@ -182,28 +178,12 @@ export default function Footer() {
               height={30}
             />
           </Box>
-          <HStack w="fit-content">
+          <HStack spacing="4">
             <Text color="#FFF">Terms</Text>
             <Text color="#FFF">Privacy</Text>
             <Text color="#FFF">Cookies</Text>
           </HStack>
-          <HStack w="fit-content">
-            <IconButton
-              aria-label="social media icon"
-              icon={<CiTwitter fontSize="30px" />}
-              variant="ghost"
-              color="#FFF"
-              rounded="full"
-              colorScheme="black"
-            />
-            <IconButton
-              aria-label="social media icon"
-              icon={<CiFacebook fontSize="30px" />}
-              variant="ghost"
-              color="#FFF"
-              rounded="full"
-              colorScheme="black"
-            />
+          <HStack spacing="4">
             <IconButton
               aria-label="social media icon"
               icon={<CiInstagram fontSize="30px" />}
@@ -212,8 +192,26 @@ export default function Footer() {
               rounded="full"
               colorScheme="black"
             />
+
+            <IconButton
+              aria-label="social media icon"
+              icon={<CiFacebook fontSize="30px" />}
+              variant="ghost"
+              color="#FFF"
+              rounded="full"
+              colorScheme="black"
+            />
+
+            <IconButton
+              aria-label="social media icon"
+              icon={<CiTwitter fontSize="30px" />}
+              variant="ghost"
+              color="#FFF"
+              rounded="full"
+              colorScheme="black"
+            />
           </HStack>
-        </SimpleGrid>
+        </Stack>
       </VStack>
     </Box>
   );
