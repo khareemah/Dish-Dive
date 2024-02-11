@@ -20,7 +20,7 @@ export default function SubNav() {
   const onSearch = useCallback(() => {
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set('q', value);
-    router.push(`/meals?${newSearchParams.toString()}`);
+    router.push(`/restaurants?${newSearchParams.toString()}`);
   }, [router, searchParams, value]);
 
   return (
@@ -43,7 +43,7 @@ export default function SubNav() {
       >
         <InputGroup w="full" size="lg">
           <Input
-            placeholder="Search for Meals"
+            placeholder="Search for Restaurants"
             variant="ghost"
             focusBorderColor="#FFF"
             sx={{ '::placeholder': { color: 'black.50' } }}

@@ -8,32 +8,36 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-import { TRelatedProduct } from '@/src/constant/allProducts';
+import { TRelatedRestaurants } from '@/src/constant/allRestaurants';
 import ArrowButtonCarousel from '@/src/ui/carousels/ArrowButtonCarousel';
 
 import FoodCard from '../../landing/FoodCard';
 
-export default function RelatedMeals({
-  relatedMeals,
-  mealName,
-}: {
-  relatedMeals: TRelatedProduct[];
-  mealName: string;
-}) {
+type Props = {
+  relatedRestaurants: TRelatedRestaurants[];
+  restaurantName: string;
+};
+
+export default function RelatedRestaurants({
+  relatedRestaurants,
+  restaurantName,
+}: Props) {
   const { isOpen, onClose, onOpen } = useDisclosure();
   return (
-    <VStack w="full" align="flex-start" pb="50px">
-      <Text fontSize={{ base: '22px', md: '28px' }}>
+    <VStack w="full" align="flex-start" pb="80px" spacing="6">
+      <Text fontSize="22px" fontWeight="600">
         People also like this from{' '}
         <chakra.span as="a" href="#" onClick={onOpen}>
-          {`${mealName}`.toLowerCase()}
+          {`${restaurantName}`.toLowerCase()}
         </chakra.span>
       </Text>
       <ArrowButtonCarousel
         spacing={{ base: 6, md: 5 }}
-        items={relatedMeals}
+        items={relatedRestaurants}
         itemProps={{ w: { base: '90%', md: '300px' }, maxW: '300px' }}
-        renderItem={(meal) => <FoodCard item={meal} key={meal.title} />}
+        renderItem={(restaurant) => (
+          <FoodCard item={restaurant} key={restaurant.title} />
+        )}
       />
       <Slide
         direction="bottom"

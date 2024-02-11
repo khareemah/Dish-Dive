@@ -2,9 +2,9 @@
 import { VStack } from '@chakra-ui/react';
 import { useSearchParams } from 'next/navigation';
 
-import MealsList from './MealsList';
+import MealsList from './RestaurantsList';
 
-export default function AllMeals() {
+export default function AllRestaurants() {
   const searchParams = useSearchParams();
   return (
     <VStack

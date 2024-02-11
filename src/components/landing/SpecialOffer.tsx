@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import allProducts from '@/src/constant/allProducts';
+import allProducts from '@/src/constant/allRestaurants';
 
 import SpecialOfferCard from './FoodCard';
 

@@ -17,11 +17,11 @@ export default function CustomerReview() {
   const { register, control } = useForm();
   return (
     <VStack w="full" align="flex-start" pb="50px" spacing="3">
-      <VStack w="full" align="flex-start" spacing="3">
-        <Text fontWeight="bold" fontSize="22px">
+      <VStack w="full" align="flex-start" spacing="6">
+        <Text fontWeight="600" fontSize="22px">
           Submit your review
         </Text>
-        <Textarea border="1px solid black" rows={5}></Textarea>
+        <Textarea border="1px solid black" rows={8} resize="none"></Textarea>
       </VStack>
       <Controller
         control={control}
@@ -38,7 +38,7 @@ export default function CustomerReview() {
         I am not compensated for reviews, i give my honest opinions, findings,
         beliefs or experiences on any topics or food items
       </Checkbox>
-      <Button w={{ base: 'full', md: '200px' }} size="lg" ml="auto" my="4">
+      <Button w={{ base: 'full', md: '200px' }} size="lg" ml="auto" mt="12">
         Submit
       </Button>
     </VStack>

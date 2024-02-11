@@ -6,18 +6,19 @@ import {
 } from '@chakra-ui/react';
 import { useParams } from 'next/navigation';
 
-import allProducts from '@/src/constant/allProducts';
+import allRestaurants from '@/src/constant/allRestaurants';
 
 import CustomerReview from './CustomerReview';
-import MealCarousel from './MealCarousel';
+import FoodCarousel from './FoodCarousel';
 import OtherComments from './OtherComments';
-import PageHeader from './PageHeader';
 import PriceRating from './PriceRating';
-import RelatedMeals from './RelatedMeals';
+import RelatedRestaurants from './RelatedRestaurants';
 
 export default function MealDetailsPage() {
-  const { mealId } = useParams();
-  const product = allProducts.find((item) => item.id.toString() === mealId);
+  const { restaurantId } = useParams();
+  const restaurant = allRestaurants.find(
+    (item) => item.id.toString() === restaurantId
+  );
 
   // const { isOpen, onToggle } = useDisclosure();
 
@@ -32,13 +33,12 @@ export default function MealDetailsPage() {
       pb="100px"
       px="20px"
     >
-      <PageHeader product={product} />
-      <MealCarousel product={product} />
-      <RelatedMeals
-        relatedMeals={product.relatedProducts}
-        mealName={product.title}
+      <FoodCarousel restaurant={restaurant} />
+      <PriceRating priceRating={restaurant.priceRating} />
+      <RelatedRestaurants
+        relatedRestaurants={restaurant.relatedRestaurants}
+        restaurantName={restaurant.restaurantName}
       />
-      <PriceRating pricing={product.pricing} />
       <CustomerReview />
       <OtherComments />
     </VStack>

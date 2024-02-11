@@ -7,11 +7,11 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-export default function PriceRating({ pricing }) {
+export default function PriceRating({ priceRating }) {
   return (
-    <VStack w="full" align="flex-start" pb="50px" spacing="20">
+    <VStack w="full" align="flex-start" py="80px" spacing="6">
       <VStack w="full" align="flex-start" spacing="6">
-        <Text fontSize={{ base: '22px', md: '28px' }}>
+        <Text fontSize="22px" fontWeight="600">
           See Price Value Rating by the numbers
         </Text>
 
@@ -24,12 +24,12 @@ export default function PriceRating({ pricing }) {
         >
           <VStack>
             <CircularProgress
-              value={pricing.goodValue}
+              value={priceRating.goodValue}
               size="150px"
               thickness="4px"
               color="yellow.400"
             >
-              <CircularProgressLabel>{`${pricing.goodValue}+`}</CircularProgressLabel>
+              <CircularProgressLabel>{`${priceRating.goodValue}+`}</CircularProgressLabel>
             </CircularProgress>
             <Text fontWeight="600" fontSize="18px">
               Good Value
@@ -38,12 +38,12 @@ export default function PriceRating({ pricing }) {
 
           <VStack>
             <CircularProgress
-              value={pricing.okay}
+              value={priceRating.okay}
               size="150px"
               thickness="4px"
               color="yellow.400"
             >
-              <CircularProgressLabel>{`${pricing.okay}+`}</CircularProgressLabel>
+              <CircularProgressLabel>{`${priceRating.okay}+`}</CircularProgressLabel>
             </CircularProgress>
             <Text fontWeight="600" fontSize="18px">
               Okay
@@ -52,13 +52,13 @@ export default function PriceRating({ pricing }) {
 
           <VStack>
             <CircularProgress
-              value={pricing.overpriced}
+              value={priceRating.overpriced}
               size="150px"
               thickness="4px"
               color="yellow.400"
             >
               <CircularProgressLabel>
-                {`${pricing.overpriced}+`}
+                {`${priceRating.overpriced}+`}
               </CircularProgressLabel>
             </CircularProgress>
             <Text fontWeight="600" fontSize="18px">

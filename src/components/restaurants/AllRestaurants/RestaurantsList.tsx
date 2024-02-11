@@ -3,7 +3,7 @@ import { Heading, SimpleGrid, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import allProducts from '@/src/constant/allProducts';
+import allProducts from '@/src/constant/allRestaurants';
 import { BackButton } from '@/src/ui/BackButton';
 import { capitalize } from '@/src/utils/string-helpers';
 
@@ -11,7 +11,7 @@ import FoodCard from '../../landing/FoodCard';
 import NoMeals from './NoMeals';
 
 type SearchParams = Partial<Record<string, string | string[]>>;
-export default function MealsList({
+export default function RestaurantsList({
   searchParams,
 }: {
   searchParams: URLSearchParams;

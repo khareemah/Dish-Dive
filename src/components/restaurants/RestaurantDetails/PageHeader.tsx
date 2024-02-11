@@ -1,22 +1,28 @@
 import {
-  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Text,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
-export default function PageHeader({ product }) {
+import { TRestaurant } from '@/src/constant/allRestaurants';
+
+type Props = {
+  restaurant: TRestaurant;
+};
+
+export default function PageHeader({ restaurant }: Props) {
   return (
-    <Breadcrumb fontSize={{ base: '18px', md: '32px' }} separator="/">
+    <Breadcrumb fontSize="22px" separator="/" fontWeight="600">
       <BreadcrumbItem>
         <BreadcrumbLink as={Link} href="/meals" prefetch={false}>
-          Meals
+          All Restaurants
         </BreadcrumbLink>
       </BreadcrumbItem>
 
       <BreadcrumbItem>
-        <Box>{product.title}</Box>
+        <Text>{restaurant.title}</Text>
       </BreadcrumbItem>
     </Breadcrumb>
   );
