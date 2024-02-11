@@ -4,7 +4,7 @@ export function camelToFlat(str: string) {
   return camelCase.toLowerCase();
 }
 
-function capitalizeString(s: string) {
+export function capitalizeString(s: string) {
   return `${s.charAt(0).toUpperCase()}${s.substring(1).toLowerCase()}`;
 }
 

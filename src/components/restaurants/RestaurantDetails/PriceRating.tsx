@@ -7,7 +7,11 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-export default function PriceRating({ priceRating }) {
+import { TPriceRating } from '@/src/constant/allRestaurants';
+
+type Props = { priceRating: TPriceRating };
+
+export default function PriceRating({ priceRating }: Props) {
   return (
     <VStack w="full" align="flex-start" py="80px" spacing="6">
       <VStack w="full" align="flex-start" spacing="6">
@@ -24,7 +28,7 @@ export default function PriceRating({ priceRating }) {
         >
           <VStack>
             <CircularProgress
-              value={priceRating.goodValue}
+              value={+priceRating.goodValue}
               size="150px"
               thickness="4px"
               color="yellow.400"
@@ -38,7 +42,7 @@ export default function PriceRating({ priceRating }) {
 
           <VStack>
             <CircularProgress
-              value={priceRating.okay}
+              value={+priceRating.okay}
               size="150px"
               thickness="4px"
               color="yellow.400"
@@ -52,7 +56,7 @@ export default function PriceRating({ priceRating }) {
 
           <VStack>
             <CircularProgress
-              value={priceRating.overpriced}
+              value={+priceRating.overpriced}
               size="150px"
               thickness="4px"
               color="yellow.400"

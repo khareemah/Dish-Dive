@@ -34,7 +34,7 @@ export default function FoodCard({ item }) {
       )}
       <AspectRatio ratio={1 / 1} w="full">
         <ChakraNextImage
-          alt="Product Name"
+          alt="food image"
           src={item.src}
           width={400}
           height={400}

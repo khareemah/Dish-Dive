@@ -35,10 +35,7 @@ export default function MealDetailsPage() {
     >
       <FoodCarousel restaurant={restaurant} />
       <PriceRating priceRating={restaurant.priceRating} />
-      <RelatedRestaurants
-        relatedRestaurants={restaurant.relatedRestaurants}
-        restaurantName={restaurant.restaurantName}
-      />
+      <RelatedRestaurants restaurant={restaurant} />
       <CustomerReview />
       <OtherComments />
     </VStack>
