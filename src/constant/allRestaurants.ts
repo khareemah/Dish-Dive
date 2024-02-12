@@ -86,6 +86,116 @@ const allRestaurants: TRestaurant[] = [
     socialMedia: '@koredefoods',
     id: 1,
   },
+
+  {
+    title: 'Jollof Rice from Adogan',
+    restaurantName: 'Adogan',
+    price: '2500',
+    rating: 4.7,
+    review: 300,
+    description:
+      'Savor the taste of authentic Jollof Rice, cooked to perfection with the finest blend of spices, tomatoes, and long grain parboiled rice, offering a burst of flavors with every mouthful.',
+    calories: '400 kcal',
+    allergy: 'Contains shellfish',
+    bestRated: true,
+    src: 'https://media.istockphoto.com/id/1370508531/photo/jollof-rice-tomatoes-and-hot-peppers-on-a-blue-plate-fork-spoon-on-a-linen-napkin-on-a-brown.jpg?s=1024x1024&w=is&k=20&c=RRIRLSYB8vMFbQ6rNeAsIio2fn4jsNgeKpnL4mxbHqU=',
+    foodImages: [
+      {
+        imgUrl:
+          'https://media.istockphoto.com/id/1370508531/photo/jollof-rice-tomatoes-and-hot-peppers-on-a-blue-plate-fork-spoon-on-a-linen-napkin-on-a-brown.jpg?s=1024x1024&w=is&k=20&c=RRIRLSYB8vMFbQ6rNeAsIio2fn4jsNgeKpnL4mxbHqU=',
+      },
+      {
+        imgUrl:
+          'https://media.istockphoto.com/id/1331401741/photo/vegetarian-nasi-goreng-fried-rice-with-pineapple-vegetables-meat-in-spicy-chilli-sambal-sauce.jpg?s=1024x1024&w=is&k=20&c=aknioNBCqEvlD4UsKcBOpUssfkJpXzAMyBqSOyouBJ4=',
+      },
+    ],
+
+    relatedRestaurants: [
+      {
+        title: 'Tasty Fried Plantains',
+        description:
+          'Indulge in the crispy goodness of perfectly fried plantains, a delightful accompaniment to your main course or a satisfying snack on its own.',
+        src: 'https://media.istockphoto.com/id/1390313220/photo/plantain-chips-served-with-colombian-traditional-hogao-on-top-of-a-wooden-table.jpg?s=1024x1024&w=is&k=20&c=YWfZ0hQEk5PZwm5OVbq-p56eMjkW7Sh551A4NOdnnMs=',
+        rating: 4.0,
+        review: 50,
+      },
+      {
+        title: 'Succulent Grilled Chicken',
+        description:
+          'Experience the succulence of tender grilled chicken, marinated in a flavorful blend of herbs and spices, offering a tantalizing treat for your taste buds.',
+        src: 'https://media.istockphoto.com/id/622185412/photo/fried-chicken-fillets-and-vegetables-on-wooden-background.jpg?s=1024x1024&w=is&k=20&c=pg5yjpI4nT14rzbqDbDf_yJ_UsEwBrXjFVFYl8IGSBU=',
+        rating: 4.5,
+        review: 80,
+      },
+    ],
+    priceRating: {
+      goodValue: '95',
+      okay: '75',
+      overpriced: '10',
+    },
+    restaurantHistory:
+      'Adogan is a renowned eatery specializing in authentic African cuisine, particularly famous for its delicious Jollof Rice. Founded in 2005 by Chef Tunde, it has since been a favorite dining destination for food enthusiasts.',
+    restaurantWebsite: 'https://adogan.com',
+    socialMedia: '@adogan',
+    id: 2,
+  },
+
+  {
+    title: 'Semo from Semo Palace',
+    restaurantName: 'Semo Palace',
+    price: '2200',
+    rating: 4.8,
+    review: 300,
+    description:
+      'Indulge in the delightful combination of Semo and Egusi Soup, a traditional Nigerian dish that offers the perfect blend of flavors and textures. Our Egusi Soup is made with ground melon seeds, assorted meats, and vegetables, cooked to perfection and served with smooth and fluffy Semo for a satisfying meal experience.',
+    calories: '500 kcal',
+    allergy: 'Contains shellfish',
+    bestRated: true,
+    src: 'https://media.istockphoto.com/id/1386522276/photo/pounded-yam-and-garri-eba-served-with-egusi-soup-ready-to-eat.jpg?s=1024x1024&w=is&k=20&c=rmyLaKekl9y_bLtmlYXQMzZAeG9bLIRdtvS2k8_LUR4=',
+    foodImages: [
+      {
+        imgUrl:
+          'https://media.istockphoto.com/id/1386522276/photo/pounded-yam-and-garri-eba-served-with-egusi-soup-ready-to-eat.jpg?s=1024x1024&w=is&k=20&c=rmyLaKekl9y_bLtmlYXQMzZAeG9bLIRdtvS2k8_LUR4=',
+      },
+      {
+        imgUrl:
+          'https://media.istockphoto.com/id/1398351215/photo/egusi-soup-with-fufu-pounded-yam.jpg?s=1024x1024&w=is&k=20&c=S64VzqRN5NqHx4UXE6JhmOokj-z-nAYABqTIPd3cEMU=',
+      },
+      {
+        imgUrl:
+          'https://media.istockphoto.com/id/1287043013/photo/bowl-of-pounded-yam-served-with-egusi-melon-soup.jpg?s=1024x1024&w=is&k=20&c=IadQ5bCI3MtZKooX1EaAbtckRRF9a6r7IhR2hITLrSk=',
+      },
+    ],
+
+    relatedRestaurants: [
+      {
+        title: 'Efo Riro And Pounded Yam',
+        description:
+          'Experience the rich flavors of Yoruba cuisine with our Efo Riro, a delicious spinach-based stew cooked with assorted meats and fish, seasoned to perfection with traditional spices and herbs, offering a satisfying taste of home.',
+        src: 'https://media.istockphoto.com/id/1388098078/photo/garri-and-pounded-yam-served-with-efo-riro-vegetable-soup.jpg?s=1024x1024&w=is&k=20&c=ZCzVe0-bNSYg8vkNBan85lxkGFWKOw9upCU2AD6xkkM=',
+        rating: 4.4,
+        review: 80,
+      },
+      {
+        title: 'Tender Goat Meat Stew',
+        description:
+          'Savor the succulence of our tender Goat Meat Stew, slow-cooked in a flavorful blend of spices and herbs, offering a savory complement to your Semo and Egusi Soup.',
+        src: 'https://media.istockphoto.com/id/1205306278/photo/overhead-view-of-indian-goat-curry-mutton-curry-nihari-rogan-josh-in-a-bowl.jpg?s=1024x1024&w=is&k=20&c=bq6hJ-rQkV2nsRwup-9M7Z8e_8TGC1NmU5tXFIaA4Bc=',
+        rating: 4.7,
+        review: 90,
+      },
+    ],
+    priceRating: {
+      goodValue: '85',
+      okay: '75',
+      overpriced: '10',
+    },
+    restaurantHistory:
+      'Semo Palace, established in 2000, has been a renowned destination for authentic Nigerian cuisine. With a commitment to quality and taste, we continue to delight our customers with our delicious offerings and warm hospitality.',
+    restaurantWebsite: 'https://semopalace.com',
+    socialMedia: '@semopalace',
+    id: 3,
+  },
 ];
 
 export default allRestaurants;

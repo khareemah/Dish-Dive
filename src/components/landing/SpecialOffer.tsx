@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import allProducts from '@/src/constant/allRestaurants';
+import { specialOffers } from '@/src/constant/special-meals';
 
 import SpecialOfferCard from './FoodCard';
 
@@ -23,7 +23,7 @@ export default function SpecialOffer() {
       px="20px"
     >
       <VStack w="full" spacing="0">
-        <Heading fontSize={{ base: '32px', lg: '40px' }}>
+        <Heading fontSize={{ base: '28px', lg: '40px' }}>
           Special Offers
         </Heading>
         <Text color="#5E6973" textAlign="center" fontSize="16px">
@@ -37,15 +37,12 @@ export default function SpecialOffer() {
         gap={{ base: '12', md: '8' }}
         columns={{ base: 1, md: 3 }}
       >
-        {allProducts
-          .filter((meal) => meal.specialOffer)
-          .slice(0, 3)
-          .map((item) => (
-            <SpecialOfferCard item={item} key={item.title} />
-          ))}
+        {specialOffers.map((item) => (
+          <SpecialOfferCard item={item} key={item.title} />
+        ))}
       </SimpleGrid>
       <Box w="full">
-        <Link href="/meals">
+        <Link href="/restaurants">
           <Button size="lg" w="full">
             See More
           </Button>

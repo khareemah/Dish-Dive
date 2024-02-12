@@ -21,13 +21,17 @@ export default function FoodCard({ item }) {
           position="absolute"
           top="0"
           right="0"
-          px="4"
-          py="2"
+          px="3"
+          py="1"
           bg="#BFFFB5"
           zIndex="1"
           color="#000"
-          rounded="8px"
+          // rounded="8px"
           shadow="sm"
+          fontSize="14px"
+          rounded="full"
+          mr="3"
+          mt="3"
         >
           Best Rated
         </Center>
@@ -50,11 +54,13 @@ export default function FoodCard({ item }) {
           {item.title}
         </Text>
 
-        <HStack>
-          <Text fontWeight="600">{item.rating}</Text>
-          <Rating rating={isNaN(+item.rating) ? 0 : +item.rating} max={5} />
-          <Text color="#3B3A3A">({item.review})</Text>
-        </HStack>
+        {item.rating && (
+          <HStack>
+            <Text fontWeight="600">{item.rating}</Text>
+            <Rating rating={isNaN(+item.rating) ? 0 : +item.rating} max={5} />
+            <Text color="#3B3A3A">({item.review})</Text>
+          </HStack>
+        )}
 
         {item.price && (
           <Text>

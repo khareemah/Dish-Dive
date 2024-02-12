@@ -24,7 +24,7 @@ type TTestimonial = {
 function TestimonialItem({ testimonial }: { testimonial: TTestimonial }) {
   return (
     <VStack spacing="8" w="full" h="full" p="3">
-      <AspectRatio w={{ base: 'full', md: '160px' }} ratio={1 / 1}>
+      <AspectRatio w={{ base: 'full', md: '337px' }} ratio={1 / 1}>
         <ChakraNextImage
           src={testimonial.imgSrc}
           alt=""

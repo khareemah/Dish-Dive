@@ -3,7 +3,7 @@ import { Heading, SimpleGrid, VStack } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import allProducts from '@/src/constant/allRestaurants';
+import allRestaurants from '@/src/constant/allRestaurants';
 import { BackButton } from '@/src/ui/BackButton';
 import { capitalize } from '@/src/utils/string-helpers';
 
@@ -11,12 +11,13 @@ import FoodCard from '../../landing/FoodCard';
 import NoMeals from './NoMeals';
 
 type SearchParams = Partial<Record<string, string | string[]>>;
-export default function RestaurantsList({
-  searchParams,
-}: {
+
+type Props = {
   searchParams: URLSearchParams;
-}) {
-  const [meals] = useState(allProducts);
+};
+
+export default function RestaurantsList({ searchParams }: Props) {
+  const [restaurants] = useState(allRestaurants);
 
   const searchParamsObject: SearchParams = {};
   searchParams.forEach((value, key) => {
@@ -38,18 +39,18 @@ export default function RestaurantsList({
   if (typeof searchParamsObject.q === 'string') {
     search = searchParamsObject.q;
   }
-  const mainMeals = meals.filter((meal) =>
-    meal.title.includes(capitalize(search))
+  const filteredRestaurants = restaurants.filter((restaurant) =>
+    restaurant.title.includes(capitalize(search))
   );
 
   return (
     <VStack w="full" align="flex-start" spacing="8">
       <BackButton to="..">
-        <Heading fontSize="28px" fontWeight="500">
-          All Available Meals
+        <Heading fontSize="20px" fontWeight="600">
+          All Available Restaurants
         </Heading>
       </BackButton>
-      {mainMeals.length === 0 ? (
+      {filteredRestaurants.length === 0 ? (
         <NoMeals />
       ) : (
         <SimpleGrid
@@ -57,9 +58,9 @@ export default function RestaurantsList({
           columns={{ base: 1, md: 3 }}
           gap={{ md: '8', base: '12' }}
         >
-          {mainMeals.map((meal) => (
-            <Link href={`meals/${meal.id}`} key={meal.id}>
-              <FoodCard item={meal} />
+          {filteredRestaurants.map((restaurant) => (
+            <Link href={`restaurants/${restaurant.id}`} key={restaurant.id}>
+              <FoodCard item={restaurant} />
             </Link>
           ))}
         </SimpleGrid>

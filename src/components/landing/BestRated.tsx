@@ -10,7 +10,7 @@ export default function BestRated() {
     <VStack
       w="full"
       align="center"
-      py="100px"
+      py="80px"
       maxW="container.md"
       mx="auto"
       spacing="12"

@@ -127,6 +127,7 @@ export default function Footer() {
           align="flex-start"
           p={{ base: '4', md: '8' }}
           spacing="6"
+          rounded="md"
         >
           <Text
             color="#FFF"

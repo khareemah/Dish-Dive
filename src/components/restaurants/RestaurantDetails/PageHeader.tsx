@@ -9,8 +9,8 @@ type Props = {
 
 export default function PageHeader({ restaurant }: Props) {
   return (
-    <BackButton to="..">
-      <Heading fontSize="22px" fontWeight="600">
+    <BackButton to="/restaurants">
+      <Heading fontSize="20px" fontWeight="600" w="full">
         {restaurant.title}
       </Heading>
     </BackButton>

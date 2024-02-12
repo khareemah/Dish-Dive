@@ -1,14 +1,14 @@
 export const specialOffers = [
   {
-    src: '/assets/images/best-rated-1.png',
+    src: '/assets/images/special-offer-1.svg',
     title: 'Happy Hour Heroes',
   },
   {
-    src: '/assets/images/best-rated-2.png',
+    src: '/assets/images/special-offer-2.svg',
     title: 'Lunchtime Steals',
   },
   {
-    src: '/assets/images/best-rated-3.png',
+    src: '/assets/images/special-offer-3.svg',
     title: 'Price-tastic Feasts',
   },
 ];

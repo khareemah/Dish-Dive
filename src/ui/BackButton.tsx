@@ -15,8 +15,8 @@ export function BackButton({ to, children }: Props) {
         variant="link"
         colorScheme="black"
         size="lg"
-        leftIcon={<ChevronLeftIcon fontSize="3xl" />}
-        fontSize="32px"
+        leftIcon={<ChevronLeftIcon fontSize="2xl" />}
+        fontSize="22px"
         fontWeight="600"
         lineHeight="48px"
         letterSpacing="0.32px"

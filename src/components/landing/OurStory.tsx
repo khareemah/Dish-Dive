@@ -11,11 +11,11 @@ export default function OurStory() {
       mx="auto"
       spacing="12"
       px="20px"
-      py="100px"
+      py="80px"
     >
       <VStack w="full" spacing="2" align="flex-start">
         <Heading
-          fontSize={{ base: '32px', lg: '40px' }}
+          fontSize={{ base: '28px', lg: '40px' }}
           textAlign={{ base: 'center', md: 'left' }}
         >
           Our Success Story
