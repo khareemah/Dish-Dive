@@ -99,18 +99,13 @@ export default function Footer() {
                 {section.title}
               </Heading>
               <VStack align="flex-start" w="full" spacing="2">
-                {section.links.map((link) =>
+                {section.links.map((link, i) =>
                   link.isExternal ? (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      isExternal
-                      color="#F9F9F9"
-                    >
+                    <Link key={i} href={link.href} isExternal color="#F9F9F9">
                       {link.label}
                     </Link>
                   ) : (
-                    <NextLink key={link.href} href={link.href}>
+                    <NextLink key={i} href={link.href}>
                       <Text color="#F3EBFA">{link.label}</Text>
                     </NextLink>
                   )

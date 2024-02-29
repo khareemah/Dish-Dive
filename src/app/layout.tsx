@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Dish Dive',
   description: 'Get the best fod in your town with deep dive',
   icons: {
-    icon: '/assets/images/favicon.ico',
+    icon: '/assets/images/logo.png',
   },
 };
 
