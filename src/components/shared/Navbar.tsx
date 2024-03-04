@@ -41,8 +41,8 @@ export default function Navbar() {
               >
                 <Link href="#">About Us</Link>
                 <Link href="#">Partners</Link>
-                <Link href="/services">Customers</Link>
-                <Link href="/contact-us">Contact</Link>
+                <Link href="#">Customers</Link>
+                <Link href="#">Contact</Link>
               </VStack>
 
               <VStack

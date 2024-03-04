@@ -35,7 +35,12 @@ export default function RestaurantsList({ searchParams }: Props) {
   const [selectedPriceRange, setSelectedPriceRange] = useState('');
 
   const priceRange = useMemo(
-    () => [{ price: '2000' }, { price: '3000' }, { price: '4000' }],
+    () => [
+      { price: '2000' },
+      { price: '3000' },
+      { price: '4000' },
+      { price: 'all' },
+    ],
     []
   );
 
@@ -60,19 +65,23 @@ export default function RestaurantsList({ searchParams }: Props) {
     return '';
   }, [searchParamsObject]);
 
-  console.log(search);
+  // console.log(search);
 
   const filterByPrice = (price: { price: string }) => {
     setSelectedPriceRange(price.price);
   };
 
-  console.log(selectedPriceRange);
+  // console.log(selectedPriceRange);
 
   const filteredRestaurant = filteredRestaurants
     .filter((restaurant) => restaurant.title.includes(capitalize(search)))
-    .filter((restaurant) => +restaurant.price >= +selectedPriceRange);
+    .filter((restaurant) => {
+      if (selectedPriceRange === 'all') return restaurant;
+      return +restaurant.price >= +selectedPriceRange;
+    });
 
-  //   filteredRestaurant = filteredRestaurant.filter((restaurant) => {
+  // console.log(filteredRestaurant);
+
   //     console.log(typeof selectedPriceRange);
   //     if (selectedPriceRange === "2000") {
   //       return +restaurant.price >= 2000;
@@ -118,20 +127,47 @@ export default function RestaurantsList({ searchParams }: Props) {
                     transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
                   />
                 }
+                _hover={{
+                  bg: 'transparent',
+                }}
+                _expanded={{ bg: 'transparent' }}
               >
                 Filter By Price
               </MenuButton>
 
               <MenuList zIndex="2">
-                {priceRange.map((price) => (
-                  <MenuItem
-                    onClick={filterByPrice.bind(null, price)}
-                    key={price.price}
-                  >
-                    {' '}
-                    from {formatPrice(+price.price)}
-                  </MenuItem>
-                ))}
+                {priceRange.map((price) => {
+                  if (price.price === 'all') {
+                    return (
+                      <MenuItem
+                        onClick={filterByPrice.bind(null, price)}
+                        key={price.price}
+                        bg={
+                          selectedPriceRange === price.price
+                            ? 'yellow.200'
+                            : 'undefined'
+                        }
+                      >
+                        {' '}
+                        All
+                      </MenuItem>
+                    );
+                  }
+                  return (
+                    <MenuItem
+                      onClick={filterByPrice.bind(null, price)}
+                      key={price.price}
+                      bg={
+                        selectedPriceRange === price.price
+                          ? 'yellow.200'
+                          : 'undefined'
+                      }
+                    >
+                      {' '}
+                      from {formatPrice(+price.price)}
+                    </MenuItem>
+                  );
+                })}
               </MenuList>
             </>
           )}
